@@ -34,6 +34,13 @@ This website is styled with a **minimalist intellectual visual identity** inspir
 
 ---
 
+## 🌐 Official Production Deployment
+
+- **Live URL:** [https://bpausinc.github.io/](https://bpausinc.github.io/)
+- **Repository:** [https://github.com/bpausinc/bpausinc.github.io](https://github.com/bpausinc/bpausinc.github.io)
+
+---
+
 ## 📬 Contact & Inquiries
 
 - **Official Email:** `BPAUS2026@gmail.com`
