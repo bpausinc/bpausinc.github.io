@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boya Professional Alliance, Inc. | 博雅新青年</title>
+  <meta name="description" content="Boya Professional Alliance, Inc. (博雅新青年 / BPAUS) is a New York-incorporated 501(c)(3) non-profit organization.">
+  
+  <!-- Official Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            // Minimalist intellectual light & soft mint palette
+            berggruen: {
+              blue: '#5DB8A6',       // Light, soft, desaturated mint
+              darkblue: '#367B6D',   // Refined eucalyptus hover state
+              navy: '#203A34',       // Softer muted slate-pine foundation
+              lightmint: '#AEE4D8',  // Delicate luminous mint for dark accents
+              softmint: '#F0F8F5',   // Airy, whisper-light mint wash for tags & cards
+              paper: '#FAF9F6',      // Warm Architectural Linen/Paper
+              card: '#F5F9F7',       // Subtle soft mint-tinted sandstone
+              border: '#E2ECE7',     // Soft, delicate hairline divider
+              ink: '#151C1A',        // Charcoal Black Body
+              muted: '#62736D',      // Gentle Slate-Sage Caption
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts: Plus Jakarta Sans & Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #FAF9F5;
+      color: #111317;
+    }
+    .serif-display {
+      font-family: 'Playfair Display', serif;
+    }
+    .img-zoom {
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .group:hover .img-zoom {
+      transform: scale(1.04);
+    }
+  </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen selection:bg-berggruen-lightmint selection:text-berggruen-navy">
+
+  <!-- BERGGRUEN STYLE NAVIGATION (Minimalist Header) -->
+  <header class="sticky top-0 z-50 bg-[#FAF9F5]/95 backdrop-blur-md border-b border-berggruen-border transition-all">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo & Organization Name -->
+        <a href="#" class="flex items-center gap-3.5 group">
+          <img src="assets/logo.jpg" alt="Logo" class="w-10 h-10 object-contain rounded-md border border-berggruen-border bg-white shadow-xs">
+          <div class="flex flex-col">
+            <span class="font-extrabold text-berggruen-ink text-base tracking-tight leading-snug group-hover:text-berggruen-blue transition-colors">
+              Boya Professional Alliance, Inc.
+            </span>
+            <span class="text-[11px] text-berggruen-muted font-medium tracking-wide uppercase">
+              博雅新青年 &bull; BPAUS
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation: 5 Major Columns -->
+        <nav class="hidden md:flex items-center space-x-8 text-[13px] font-semibold text-slate-700">
+          <a href="#about" class="hover:text-berggruen-blue transition-colors py-1">About Us</a>
+          <a href="#programs" class="hover:text-berggruen-blue transition-colors py-1">Our Programs</a>
+          <a href="#events" class="hover:text-berggruen-blue transition-colors py-1">Past Events</a>
+          <a href="#news" class="hover:text-berggruen-blue transition-colors py-1">News</a>
+          <a href="#contact" class="hover:text-berggruen-blue transition-colors py-1">Contact Us</a>
+        </nav>
+
+        <!-- Right Action Button: Donate -->
+        <div class="hidden sm:flex items-center">
+          <a href="#donate" class="px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-berggruen-blue text-[#152E28] hover:bg-berggruen-darkblue hover:text-white shadow-xs transition-all">
+            Donate
+          </a>
+        </div>
+
+        <!-- Mobile Trigger -->
+        <div class="flex md:hidden">
+          <button id="mobileMenuBtn" type="button" class="p-2 text-slate-700 hover:text-berggruen-blue focus:outline-none" aria-label="Toggle menu">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown -->
+    <div id="mobileMenu" class="hidden md:hidden bg-[#FAF9F5] border-b border-berggruen-border px-6 py-5 space-y-4 shadow-lg">
+      <a href="#about" class="block text-sm font-semibold text-slate-800 hover:text-berggruen-blue" onclick="toggleMobileMenu()">About Us</a>
+      <a href="#programs" class="block text-sm font-semibold text-slate-800 hover:text-berggruen-blue" onclick="toggleMobileMenu()">Our Programs</a>
+      <a href="#events" class="block text-sm font-semibold text-slate-800 hover:text-berggruen-blue" onclick="toggleMobileMenu()">Past Events</a>
+      <a href="#news" class="block text-sm font-semibold text-slate-800 hover:text-berggruen-blue" onclick="toggleMobileMenu()">News</a>
+      <a href="#contact" class="block text-sm font-semibold text-slate-800 hover:text-berggruen-blue" onclick="toggleMobileMenu()">Contact Us</a>
+      <div class="pt-2">
+        <a href="#donate" onclick="toggleMobileMenu()" class="block w-full py-2.5 rounded-full text-center text-xs font-bold uppercase tracking-wider bg-berggruen-blue text-[#152E28]">
+          Donate
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+
+    <!-- HERO SECTION (Prominent Entity Name & Berggruen Editorial Aesthetic) -->
+    <section class="py-20 sm:py-28 bg-[#FAF9F5] border-b border-berggruen-border">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        <div class="max-w-4xl">
+          
+          <div class="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-berggruen-blue mb-6">
+            <span class="w-2 h-2 rounded-full bg-berggruen-blue"></span>
+            New York 501(c)(3) Public Charity &bull; 博雅新青年 (BPAUS)
+          </div>
+
+          <!-- Prominent Entity Name in Primary Headline Position -->
+          <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-berggruen-ink leading-[1.06] mb-6">
+            Boya Professional Alliance, Inc.
+          </h1>
+
+          <!-- Intellectual Philosophy & Mission Subtitle -->
+          <div class="text-xl sm:text-2xl text-slate-700 font-light leading-snug mb-8 max-w-3xl">
+            <span class="font-semibold text-berggruen-ink">Intellectual breadth.</span> Moral distinction.<br>
+            <span class="serif-display italic font-normal text-berggruen-blue text-2xl sm:text-3xl">Interdisciplinary advancement.</span>
+          </div>
+
+          <p class="text-lg sm:text-xl text-berggruen-muted leading-relaxed font-light mb-10 max-w-2xl">
+            Convening emerging leaders and exceptional professionals at the intersection of commerce and technological innovation across North America.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4">
+            <a href="#donate" class="px-7 py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-berggruen-blue hover:bg-berggruen-darkblue text-[#152E28] hover:text-white transition-all shadow-xs">
+              Donate to Boya Alliance &rarr;
+            </a>
+            <a href="#about" class="px-6 py-3 rounded-full text-xs font-semibold text-slate-800 border border-berggruen-border hover:border-berggruen-ink transition-colors bg-white">
+              Read Our Charter
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 1. ABOUT US                                -->
+    <!-- ========================================== -->
+    <section id="about" class="py-24 bg-white border-b border-berggruen-border">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        
+        <div class="max-w-2xl mb-12">
+          <div class="text-xs font-mono font-bold uppercase tracking-widest text-berggruen-blue mb-2">01 / About Us</div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-berggruen-ink tracking-tight">Our Mission & Charter</h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          <!-- Official Charter Card (Exact text word-for-word) -->
+          <div class="lg:col-span-8 bg-[#FAF9F5] p-8 sm:p-12 rounded-2xl border border-berggruen-border shadow-xs">
+            <div class="text-berggruen-ink text-base sm:text-lg leading-relaxed space-y-6 font-normal">
+              <p>
+                <strong class="font-bold text-berggruen-ink">Boya Professional Alliance Inc. (BPAUS)</strong> is a New York-incorporated 501(c)(3) non-profit organization.
+              </p>
+              <p class="text-slate-700">
+                Rooted in classical literature, the philosophy of &ldquo;Boya&rdquo; reflects intellectual breadth and moral distinction, finding harmony with the liberal arts ideals of the West.
+              </p>
+              <p class="text-slate-700">
+                Anchored at the intersection of commerce and technological innovation across North America, the Alliance serves as a collaborative hub for emerging leaders and high-caliber professionals across diverse sectors.
+              </p>
+              <p class="text-berggruen-ink italic border-l-2 border-berggruen-blue pl-4 py-1.5 font-medium">
+                Founded on passion and inspired by purpose, BPAUS convenes exceptional talent to foster meaningful professional dialogue and interdisciplinary advancement.
+              </p>
+            </div>
+          </div>
+
+          <!-- Quick Institutional Credentials -->
+          <div class="lg:col-span-4 space-y-4">
+            <div class="bg-[#FAF9F5] p-6 rounded-2xl border border-berggruen-border">
+              <div class="text-xs font-mono font-bold text-berggruen-muted uppercase tracking-wider mb-1">Entity Status</div>
+              <div class="text-base font-bold text-berggruen-ink">501(c)(3) Public Charity</div>
+              <div class="text-xs text-berggruen-muted mt-1 leading-relaxed">Contributions tax-deductible under IRC Section 170.</div>
+            </div>
+
+            <div class="bg-[#FAF9F5] p-6 rounded-2xl border border-berggruen-border">
+              <div class="text-xs font-mono font-bold text-berggruen-muted uppercase tracking-wider mb-1">State of Domicile</div>
+              <div class="text-base font-bold text-berggruen-ink">New York, United States</div>
+              <div class="text-xs text-berggruen-muted mt-1 leading-relaxed">Incorporated not-for-profit corporation.</div>
+            </div>
+
+            <div class="bg-[#FAF9F5] p-6 rounded-2xl border border-berggruen-border">
+              <div class="text-xs font-mono font-bold text-berggruen-muted uppercase tracking-wider mb-1">Corporate Matching</div>
+              <div class="text-base font-bold text-berggruen-blue flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span> Benevity Causes Verified
+              </div>
+              <div class="text-xs text-berggruen-muted mt-1 leading-relaxed">Eligible for 100% corporate employer matching.</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 2. OUR PROGRAMS (Minimalist Cards)         -->
+    <!-- ========================================== -->
+    <section id="programs" class="py-24 bg-[#FAF9F5] border-b border-berggruen-border">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        
+        <div class="max-w-3xl mb-16">
+          <div class="text-xs font-mono font-bold uppercase tracking-widest text-berggruen-blue mb-2">02 / Our Programs</div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-berggruen-ink tracking-tight">Core Program Pillars</h2>
+          <p class="text-sm text-berggruen-muted mt-2 font-light leading-relaxed">
+            Standardized educational, executive, and philanthropic initiatives. Click any program below to view its full charter and pillars.
+          </p>
+        </div>
+
+        <!-- 3-Column Minimalist Grid with Retained Photography -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+          
+          <!-- Pillar 1: Boya Roundtable Series -->
+          <div onclick="openProgramModal('roundtable')" class="bg-white rounded-2xl border border-berggruen-border overflow-hidden hover:border-berggruen-blue hover:shadow-md transition-all group shadow-xs flex flex-col justify-between cursor-pointer">
+            <div class="p-6 sm:p-7">
+              <h3 class="text-xl font-extrabold text-berggruen-ink tracking-tight group-hover:text-berggruen-blue transition-colors">
+                Boya Roundtable Series
+              </h3>
+              <p class="text-xs font-semibold text-berggruen-blue mt-1 mb-3">
+                Closed-Door Strategic Inquiry &amp; Industry Frontiers
+              </p>
+              
+              <div class="flex flex-wrap gap-1.5 mb-5">
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">Executive Forum</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">Chatham House Rule</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">By Invitation</span>
+              </div>
+
+              <!-- Retained Photo -->
+              <div class="h-56 rounded-xl overflow-hidden relative border border-slate-100">
+                <img src="https://images.unsplash.com/photo-1544531585-9847b68c8c86?auto=format&fit=crop&w=800&q=80" alt="Boya Roundtable Series Assembly" class="w-full h-full object-cover img-zoom">
+                <div class="absolute bottom-2.5 left-2.5 bg-[#FAF9F5]/90 backdrop-blur-xs px-2.5 py-1 rounded text-[10px] font-mono font-semibold text-berggruen-ink border border-berggruen-border">
+                  Curated 20–30 Seats
+                </div>
+              </div>
+            </div>
+
+            <!-- Click Trigger CTA -->
+            <div class="px-6 pb-6 sm:px-7 sm:pb-7 pt-0 mt-auto">
+              <button type="button" class="w-full py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-berggruen-blue text-[#152E28] group-hover:bg-berggruen-darkblue group-hover:text-white transition-all shadow-xs flex items-center justify-center gap-1.5">
+                <span>View Overview &amp; Pillars</span> &rarr;
+              </button>
+            </div>
+          </div>
+
+          <!-- Pillar 2: Boya Career Accelerator Workshops -->
+          <div onclick="openProgramModal('accelerator')" class="bg-white rounded-2xl border border-berggruen-border overflow-hidden hover:border-berggruen-blue hover:shadow-md transition-all group shadow-xs flex flex-col justify-between cursor-pointer">
+            <div class="p-6 sm:p-7">
+              <h3 class="text-xl font-extrabold text-berggruen-ink tracking-tight group-hover:text-berggruen-blue transition-colors">
+                Boya Career Accelerator Workshops
+              </h3>
+              <p class="text-xs font-semibold text-berggruen-blue mt-1 mb-3">
+                Soft-Power Mastery, Executive Presence &amp; Upward Influence
+              </p>
+              
+              <div class="flex flex-wrap gap-1.5 mb-5">
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">Professional Development</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">Leadership Labs</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">Cohort-Based</span>
+              </div>
+
+              <!-- Retained Photo -->
+              <div class="h-56 rounded-xl overflow-hidden relative border border-slate-100">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" alt="Boya Career Accelerator Leadership Lab" class="w-full h-full object-cover img-zoom">
+                <div class="absolute bottom-2.5 left-2.5 bg-[#FAF9F5]/90 backdrop-blur-xs px-2.5 py-1 rounded text-[10px] font-mono font-semibold text-berggruen-ink border border-berggruen-border">
+                  Executive Mentorship
+                </div>
+              </div>
+            </div>
+
+            <!-- Click Trigger CTA -->
+            <div class="px-6 pb-6 sm:px-7 sm:pb-7 pt-0 mt-auto">
+              <button type="button" class="w-full py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-berggruen-blue text-[#152E28] group-hover:bg-berggruen-darkblue group-hover:text-white transition-all shadow-xs flex items-center justify-center gap-1.5">
+                <span>View Overview &amp; Pillars</span> &rarr;
+              </button>
+            </div>
+          </div>
+
+          <!-- Pillar 3: Boya Sports Clinics & Fundamentals -->
+          <div onclick="openProgramModal('clinics')" class="bg-white rounded-2xl border border-berggruen-border overflow-hidden hover:border-berggruen-blue hover:shadow-md transition-all group shadow-xs flex flex-col justify-between cursor-pointer">
+            <div class="p-6 sm:p-7">
+              <h3 class="text-xl font-extrabold text-berggruen-ink tracking-tight group-hover:text-berggruen-blue transition-colors">
+                Boya Sports Clinics &amp; Fundamentals
+              </h3>
+              <p class="text-xs font-semibold text-berggruen-blue mt-1 mb-3">
+                Athletic Literacy, Community Equity &amp; Lifelong Wellness
+              </p>
+              
+              <div class="flex flex-wrap gap-1.5 mb-5">
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">Philanthropy</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">501(c)(3) Subsidized</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">Sports &amp; Community</span>
+              </div>
+
+              <!-- Retained Photo -->
+              <div class="h-56 rounded-xl overflow-hidden relative border border-slate-100">
+                <img src="https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=800&q=80" alt="Boya Sports Clinics and Community Athletics" class="w-full h-full object-cover img-zoom">
+                <div class="absolute bottom-2.5 left-2.5 bg-[#FAF9F5]/90 backdrop-blur-xs px-2.5 py-1 rounded text-[10px] font-mono font-semibold text-berggruen-ink border border-berggruen-border">
+                  Tennis &bull; Pickleball &bull; Badminton
+                </div>
+              </div>
+            </div>
+
+            <!-- Click Trigger CTA -->
+            <div class="px-6 pb-6 sm:px-7 sm:pb-7 pt-0 mt-auto">
+              <button type="button" class="w-full py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-berggruen-blue text-[#152E28] group-hover:bg-berggruen-darkblue group-hover:text-white transition-all shadow-xs flex items-center justify-center gap-1.5">
+                <span>View Overview &amp; Pillars</span> &rarr;
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 3. PAST EVENTS (With Photos)               -->
+    <!-- ========================================== -->
+    <section id="events" class="py-24 bg-white border-b border-berggruen-border">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        
+        <div class="max-w-2xl mb-14">
+          <div class="text-xs font-mono font-bold uppercase tracking-widest text-berggruen-blue mb-2">03 / Past Events</div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-berggruen-ink tracking-tight">Recent Gatherings & Symposia</h2>
+          <p class="text-sm text-berggruen-muted mt-2 font-light">
+            Highlights and proceedings from recent BPAUS colloquia and community tournaments.
+          </p>
+        </div>
+
+        <div class="space-y-8">
+          
+          <!-- Event 1 (Horizontal Editorial Card) -->
+          <div class="bg-[#FAF9F5] border border-berggruen-border rounded-2xl overflow-hidden grid grid-cols-1 md:grid-cols-12 items-center hover:border-berggruen-blue transition-colors group">
+            <div class="md:col-span-5 h-64 sm:h-72 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=800&q=80" alt="Executive Forum" class="w-full h-full object-cover img-zoom">
+            </div>
+            <div class="md:col-span-7 p-7 sm:p-10 space-y-3">
+              <div class="flex items-center gap-2 text-xs font-mono text-berggruen-blue uppercase font-bold">
+                <span>October 2026</span> &bull; <span>New York</span> &bull; <span>Boya Roundtable Series</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-bold text-berggruen-ink group-hover:text-berggruen-blue transition-colors">
+                Boya Roundtable Series: Strategic Inquiry into AI &amp; Capital Frontiers
+              </h3>
+              <p class="text-sm text-berggruen-muted leading-relaxed font-light">
+                Closed-door assembly convened under the Chatham House Rule, dissecting friction points, empirical playbooks, and tactical execution at the intersection of quantitative finance and artificial intelligence.
+              </p>
+              <div class="pt-2 text-xs text-slate-500 font-medium">
+                Curated 25-seat assembly with veteran founders, corporate directors, and researchers.
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 2 (Horizontal Editorial Card) -->
+          <div class="bg-[#FAF9F5] border border-berggruen-border rounded-2xl overflow-hidden grid grid-cols-1 md:grid-cols-12 items-center hover:border-berggruen-blue transition-colors group">
+            <div class="md:col-span-5 h-64 sm:h-72 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Mentorship Kickoff" class="w-full h-full object-cover img-zoom">
+            </div>
+            <div class="md:col-span-7 p-7 sm:p-10 space-y-3">
+              <div class="flex items-center gap-2 text-xs font-mono text-berggruen-blue uppercase font-bold">
+                <span>September 2026</span> &bull; <span>Hybrid / Virtual</span> &bull; <span>Boya Career Accelerator</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-bold text-berggruen-ink group-hover:text-berggruen-blue transition-colors">
+                Boya Career Accelerator Workshops: Soft-Power Mastery &amp; Upward Influence
+              </h3>
+              <p class="text-sm text-berggruen-muted leading-relaxed font-light">
+                Intensive cohort laboratory decoding stakeholder perceptual modalities and transforming passive execution into proactive, high-trust executive partnerships.
+              </p>
+              <div class="pt-2 text-xs text-slate-500 font-medium">
+                Led by veteran corporate directors and mentors across technology and asset management.
+              </div>
+            </div>
+          </div>
+
+          <!-- Event 3 (Horizontal Editorial Card) -->
+          <div class="bg-[#FAF9F5] border border-berggruen-border rounded-2xl overflow-hidden grid grid-cols-1 md:grid-cols-12 items-center hover:border-berggruen-blue transition-colors group">
+            <div class="md:col-span-5 h-64 sm:h-72 overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1599474924187-334a4ae5bd3c?auto=format&fit=crop&w=800&q=80" alt="Pickleball Cup" class="w-full h-full object-cover img-zoom">
+            </div>
+            <div class="md:col-span-7 p-7 sm:p-10 space-y-3">
+              <div class="flex items-center gap-2 text-xs font-mono text-berggruen-blue uppercase font-bold">
+                <span>August 2026</span> &bull; <span>Athletics &amp; Community</span> &bull; <span>Boya Sports Clinics</span>
+              </div>
+              <h3 class="text-xl sm:text-2xl font-bold text-berggruen-ink group-hover:text-berggruen-blue transition-colors">
+                Boya Sports Clinics &amp; Fundamentals: Community Charity Tournament
+              </h3>
+              <p class="text-sm text-berggruen-muted leading-relaxed font-light">
+                501(c)(3) subsidized athletic clinic and tournament promoting biomechanical coaching, court etiquette, and interdisciplinary networking outside corporate settings.
+              </p>
+              <div class="pt-2 text-xs text-slate-500 font-medium">
+                Over 120 participants across subsidized student clinics and amateur doubles bracket play.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 4. NEWS (With Photos)                      -->
+    <!-- ========================================== -->
+    <section id="news" class="py-24 bg-[#FAF9F5] border-b border-berggruen-border">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        
+        <div class="max-w-2xl mb-14">
+          <div class="text-xs font-mono font-bold uppercase tracking-widest text-berggruen-blue mb-2">04 / News</div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-berggruen-ink tracking-tight">Announcements & Dispatch</h2>
+          <p class="text-sm text-berggruen-muted mt-2 font-light">
+            Official institutional updates, alliance milestones, and partnership announcements.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          
+          <!-- News Article 1 -->
+          <article class="bg-white rounded-2xl border border-berggruen-border overflow-hidden hover:border-berggruen-blue transition-all group shadow-xs flex flex-col justify-between">
+            <div>
+              <div class="h-60 overflow-hidden relative">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Corporate Matching" class="w-full h-full object-cover img-zoom">
+                <div class="absolute top-3 left-3 bg-[#FAF9F5]/90 backdrop-blur-xs px-2.5 py-1 rounded text-[11px] font-mono font-semibold text-berggruen-blue border border-berggruen-border">
+                  Corporate Giving
+                </div>
+              </div>
+              <div class="p-7">
+                <div class="text-xs font-mono text-berggruen-muted mb-2">October 24, 2026</div>
+                <h3 class="text-xl font-bold text-berggruen-ink group-hover:text-berggruen-blue transition-colors leading-snug mb-3">
+                  Benevity Causes Registration Completed for 100% Corporate Matching
+                </h3>
+                <p class="text-sm text-berggruen-muted leading-relaxed font-light">
+                  Employees at leading North American technology and financial corporations can now donate directly and request 100% employer match under our official legal entity name: <strong class="font-semibold text-berggruen-ink">Boya Professional Alliance, Inc.</strong>, directly supporting the <em>Boya Roundtable Series</em>, <em>Boya Career Accelerator Workshops</em>, and subsidized <em>Boya Sports Clinics &amp; Fundamentals</em>.
+                </p>
+              </div>
+            </div>
+            <div class="px-7 pb-6 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+              <span class="text-berggruen-muted">Benevity Causes Verified</span>
+              <a href="#donate" class="text-berggruen-blue font-bold hover:underline">Donate & Match &rarr;</a>
+            </div>
+          </article>
+
+          <!-- News Article 2 -->
+          <article class="bg-white rounded-2xl border border-berggruen-border overflow-hidden hover:border-berggruen-blue transition-all group shadow-xs flex flex-col justify-between">
+            <div>
+              <div class="h-60 overflow-hidden relative">
+                <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80" alt="Executive Mentors" class="w-full h-full object-cover img-zoom">
+                <div class="absolute top-3 left-3 bg-[#FAF9F5]/90 backdrop-blur-xs px-2.5 py-1 rounded text-[11px] font-mono font-semibold text-berggruen-blue border border-berggruen-border">
+                  Alliance Network
+                </div>
+              </div>
+              <div class="p-7">
+                <div class="text-xs font-mono text-berggruen-muted mb-2">October 12, 2026</div>
+                <h3 class="text-xl font-bold text-berggruen-ink group-hover:text-berggruen-blue transition-colors leading-snug mb-3">
+                  Executive Mentor Network Welcomes Senior Industry Directors
+                </h3>
+                <p class="text-sm text-berggruen-muted leading-relaxed font-light">
+                  Expanding advisory capacity with new senior leaders from global technology, asset management, and research institutes to support the upcoming cohort of the <em>Boya Career Accelerator Workshops</em> and invited discussants for the <em>Boya Roundtable Series</em>.
+                </p>
+              </div>
+            </div>
+            <div class="px-7 pb-6 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+              <span class="text-berggruen-muted">Mentorship Initiative</span>
+              <a href="#programs" class="text-berggruen-blue font-bold hover:underline">View Programs &rarr;</a>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- 5. CONTACT US                              -->
+    <!-- ========================================== -->
+    <section id="contact" class="py-24 bg-white border-b border-berggruen-border">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
+          
+          <div class="lg:col-span-5 space-y-6">
+            <div class="text-xs font-mono font-bold uppercase tracking-widest text-berggruen-blue">05 / Contact Us</div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-berggruen-ink tracking-tight">Connect with the Alliance</h2>
+            <p class="text-base text-berggruen-muted font-light leading-relaxed">
+              We welcome dialogue with corporate giving coordinators, prospective mentors, speakers, and institutional partners.
+            </p>
+
+            <div class="pt-4 space-y-4 text-sm">
+              <div class="p-4 rounded-xl bg-[#FAF9F5] border border-berggruen-border">
+                <div class="text-xs font-mono text-berggruen-muted uppercase font-bold">Official Email</div>
+                <a href="mailto:BPAUS2026@gmail.com" class="font-bold text-berggruen-ink text-base hover:text-berggruen-blue transition-colors">BPAUS2026@gmail.com</a>
+              </div>
+              
+              <div class="p-4 rounded-xl bg-[#FAF9F5] border border-berggruen-border">
+                <div class="text-xs font-mono text-berggruen-muted uppercase font-bold">Incorporation Domicile</div>
+                <div class="font-semibold text-berggruen-ink">State of New York, United States</div>
+              </div>
+
+              <div class="p-4 rounded-xl bg-[#FAF9F5] border border-berggruen-border">
+                <div class="text-xs font-mono text-berggruen-muted uppercase font-bold">Official Web Portal</div>
+                <div class="font-semibold text-berggruen-ink">www.boyaus.org</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Minimalist Berggruen Form -->
+          <div class="lg:col-span-7 bg-[#FAF9F5] p-8 sm:p-10 rounded-2xl border border-berggruen-border">
+            <h3 class="text-lg font-bold text-berggruen-ink mb-1">Send a Message</h3>
+            <p class="text-xs text-berggruen-muted mb-6">Our board monitors inquiries daily and will reply promptly.</p>
+
+            <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-bold uppercase tracking-wider text-berggruen-muted mb-1.5">Your Name *</label>
+                  <input type="text" required placeholder="Full Name" class="w-full px-4 py-3 rounded-xl border border-berggruen-border bg-white text-sm focus:outline-none focus:border-berggruen-blue">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold uppercase tracking-wider text-berggruen-muted mb-1.5">Email Address *</label>
+                  <input type="email" required placeholder="name@company.com" class="w-full px-4 py-3 rounded-xl border border-berggruen-border bg-white text-sm focus:outline-none focus:border-berggruen-blue">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-berggruen-muted mb-1.5">Subject</label>
+                <input type="text" id="contactSubject" placeholder="Boya Roundtable / Accelerator / Clinics / General" class="w-full px-4 py-3 rounded-xl border border-berggruen-border bg-white text-sm focus:outline-none focus:border-berggruen-blue">
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-berggruen-muted mb-1.5">Message *</label>
+                <textarea rows="4" required placeholder="How can the Alliance collaborate with you?" class="w-full px-4 py-3 rounded-xl border border-berggruen-border bg-white text-sm focus:outline-none focus:border-berggruen-blue"></textarea>
+              </div>
+
+              <button type="submit" class="px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider bg-berggruen-blue hover:bg-berggruen-darkblue text-[#152E28] hover:text-white transition-colors shadow-xs">
+                Send Message &rarr;
+              </button>
+            </form>
+
+            <div id="formSuccess" class="hidden mt-4 text-xs font-semibold text-emerald-700 bg-emerald-50 p-3 rounded-lg border border-emerald-200">
+              Thank you. Your message has been received by our board.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DONATE SECTION (Berggruen Deep Blue & White) -->
+    <section id="donate" class="py-20 bg-berggruen-navy text-white relative overflow-hidden">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="space-y-2 max-w-2xl">
+          <div class="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-berggruen-lightmint">
+            <span class="w-2 h-2 rounded-full bg-berggruen-lightmint"></span> Support Our Mission
+          </div>
+          <h2 class="text-3xl font-extrabold tracking-tight">Donate & Double Your Impact</h2>
+          <p class="text-sm text-slate-300 font-light leading-relaxed">
+            Contributions to Boya Professional Alliance, Inc. are tax-deductible under IRC Section 170. Eligible employees at Google, Apple, Microsoft, and Meta can request a 100% employer match on Benevity Causes using our registered entity name:
+          </p>
+          <div class="pt-2">
+            <span class="font-mono text-sm bg-white/10 px-3 py-1.5 rounded-md text-white font-semibold border border-white/10">
+              Boya Professional Alliance, Inc.
+            </span>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center gap-4 shrink-0">
+          <button onclick="copyLegalName()" class="px-7 py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-white text-berggruen-navy hover:bg-slate-100 transition-colors shadow-xs">
+            Copy Legal Name
+          </button>
+          <a href="mailto:BPAUS2026@gmail.com?subject=Donation%20and%20Corporate%20Match%20Inquiry" class="px-7 py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-berggruen-blue text-[#152E28] hover:bg-berggruen-darkblue hover:text-white transition-colors shadow-xs">
+            Inquire via Email
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MINIMALIST FOOTER -->
+  <footer class="bg-white border-t border-berggruen-border py-12 text-xs text-berggruen-muted">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      
+      <div class="flex items-center gap-3">
+        <img src="assets/logo.jpg" alt="Logo" class="w-8 h-8 object-contain rounded border border-berggruen-border">
+        <div>
+          <span class="font-bold text-berggruen-ink">Boya Professional Alliance, Inc.</span>
+          <span class="text-slate-400 mx-1">&bull;</span>
+          <span>博雅新青年 &bull; BPAUS</span>
+        </div>
+      </div>
+
+      <div class="flex items-center space-x-6">
+        <a href="#about" class="hover:text-berggruen-blue transition-colors">About</a>
+        <a href="#programs" class="hover:text-berggruen-blue transition-colors">Programs</a>
+        <a href="#events" class="hover:text-berggruen-blue transition-colors">Events</a>
+        <a href="#news" class="hover:text-berggruen-blue transition-colors">News</a>
+        <a href="#contact" class="hover:text-berggruen-blue transition-colors">Contact</a>
+        <a href="#donate" class="font-bold text-berggruen-blue hover:underline">Donate</a>
+      </div>
+
+      <div class="text-right">
+        &copy; <span id="year">2026</span> Boya Professional Alliance, Inc. All rights reserved.
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 bg-berggruen-ink text-white px-5 py-3 rounded-xl text-xs font-medium shadow-2xl opacity-0 translate-y-10 transition-all pointer-events-none border border-slate-700">
+    Legal name copied to clipboard.
+  </div>
+
+  <!-- PROGRAM DETAILS MODAL (Populated on Click) -->
+  <div id="programModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 bg-berggruen-navy/75 backdrop-blur-sm transition-opacity duration-300" onclick="handleModalBackdropClick(event)">
+    <div class="max-w-2xl w-full max-h-[90vh] overflow-y-auto bg-white rounded-3xl border border-berggruen-border shadow-2xl p-6 sm:p-10 relative my-auto">
+      
+      <!-- Close Button -->
+      <button type="button" onclick="closeProgramModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-[#FAF9F5] border border-berggruen-border flex items-center justify-center text-slate-500 hover:text-berggruen-ink hover:bg-slate-100 transition-colors" aria-label="Close modal">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+
+      <!-- Category Tags -->
+      <div id="modalTags" class="flex flex-wrap gap-1.5 mb-3 pr-8"></div>
+
+      <!-- Title & Tagline -->
+      <h3 id="modalTitle" class="text-2xl sm:text-3xl font-extrabold text-berggruen-ink tracking-tight mb-1"></h3>
+      <p id="modalTagline" class="text-xs sm:text-sm font-semibold text-berggruen-blue mb-5"></p>
+
+      <!-- Banner Image -->
+      <div class="h-56 sm:h-64 rounded-xl overflow-hidden relative border border-slate-100 mb-6">
+        <img id="modalImage" src="" alt="" class="w-full h-full object-cover">
+        <div id="modalCaption" class="absolute bottom-2.5 left-2.5 bg-[#FAF9F5]/90 backdrop-blur-xs px-2.5 py-1 rounded text-[11px] font-mono font-semibold text-berggruen-ink border border-berggruen-border"></div>
+      </div>
+
+      <!-- Official Introduction Paragraphs -->
+      <div id="modalIntro" class="text-sm text-slate-700 leading-relaxed space-y-3 mb-8 font-normal"></div>
+
+      <!-- Key Pillars List -->
+      <div class="pt-6 border-t border-slate-100 mb-8">
+        <div class="text-[11px] font-mono font-bold uppercase tracking-wider text-berggruen-muted mb-4">Key Pillars &amp; Charter</div>
+        <ul id="modalPillars" class="space-y-4 text-xs sm:text-sm text-slate-600 leading-relaxed font-light"></ul>
+      </div>
+
+      <!-- Modal Action CTA -->
+      <div class="pt-2 flex flex-col sm:flex-row gap-3">
+        <a id="modalCTA" href="#contact" class="flex-1 py-3.5 rounded-full text-xs font-bold text-center tracking-wider uppercase bg-berggruen-blue text-[#152E28] hover:bg-berggruen-darkblue hover:text-white transition-colors shadow-xs"></a>
+        <button type="button" onclick="closeProgramModal()" class="px-6 py-3.5 rounded-full text-xs font-semibold text-slate-700 border border-berggruen-border hover:bg-slate-50 transition-colors">
+          Close Overview
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    function toggleMobileMenu() {
+      mobileMenu.classList.toggle('hidden');
+    }
+    if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+
+    function copyLegalName() {
+      const name = "Boya Professional Alliance, Inc.";
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(name).then(showToast);
+      }
+    }
+
+    function showToast() {
+      const toast = document.getElementById('toast');
+      toast.classList.remove('opacity-0', 'translate-y-10');
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-10');
+      }, 2200);
+    }
+
+    /* Program Modal Data (Exact Copy Preserved for Click-to-View) */
+    const programData = {
+      roundtable: {
+        title: "Boya Roundtable Series",
+        tagline: "Closed-Door Strategic Inquiry & Industry Frontiers",
+        tags: ["Executive Forum", "Chatham House Rule", "By Invitation"],
+        image: "https://images.unsplash.com/photo-1544531585-9847b68c8c86?auto=format&fit=crop&w=1200&q=80",
+        imageCaption: "Curated 20–30 Seats Assembly",
+        intro: [
+          "The <strong>Boya Roundtable Series</strong> is an invitation-only forum presented by Boya Professional Alliance Inc. (BPAUS), designed for strategic inquiry at the frontier of industry, capital, and technology.",
+          "Moving beyond generic presentations and superficial mixers, each assembly convenes experienced peers operating at the leading edge to engage in high-conviction, peer-to-peer discourse."
+        ],
+        pillars: [
+          {
+            title: "The Frontier, Unfiltered",
+            desc: "Agendas bypass macro generalities to dissect critical friction points, market inflection moments, and tactical execution on the ground."
+          },
+          {
+            title: "Visionary Navigators",
+            desc: "Every session features 2–3 veteran leaders who share empirical playbooks and battle-tested frameworks instead of scripted talking points."
+          },
+          {
+            title: "Curated Assembly (20–30 Seats)",
+            desc: "Participation is strictly vetted to ensure every attendee brings commensurate expertise, meaningful context, and mutual respect to the table."
+          },
+          {
+            title: "The Chatham House Standard",
+            desc: "High-stakes topics (including quantitative finance and proprietary tech) adhere strictly to the Chatham House Rule to protect privacy and promote absolute candor. Selected frameworks from non-sensitive sessions are published to elevate the wider community."
+          }
+        ],
+        ctaText: "Apply for Invitation →",
+        ctaPrefill: "Boya Roundtable Series (Apply for Invitation)"
+      },
+      accelerator: {
+        title: "Boya Career Accelerator Workshops",
+        tagline: "Soft-Power Mastery, Executive Presence & Upward Influence",
+        tags: ["Professional Development", "Leadership Labs", "Cohort-Based"],
+        image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1200&q=80",
+        imageCaption: "Executive Mentorship & Leadership Labs",
+        intro: [
+          "The <strong>Boya Career Accelerator Workshop Series</strong> is BPAUS’s executive laboratory for mastering the soft-power dynamics of leadership and career advancement.",
+          "While the <em>Boya Roundtable Series</em> focuses on closed-door technical strategy and market frontiers for senior peers, the <em>Career Accelerator Workshops</em> sharpen the human edge: bridging the gap between technical brilliance and leadership recognition so rising professionals can align on the right wavelength, command authority, and turn hard work into undeniable impact."
+        ],
+        pillars: [
+          {
+            title: "Perceptual Alignment",
+            desc: "Decode stakeholder modalities (visual, auditory, kinesthetic) to deliver precise communication that lands with immediate clarity."
+          },
+          {
+            title: "Upward Influence",
+            desc: "Read leadership priorities and decision archetypes to transform passive execution into proactive, high-trust partnership."
+          },
+          {
+            title: "Strategic Visibility",
+            desc: "Reframe routine 1-on-1s and status updates into high-leverage dialogues centered on tangible business impact."
+          },
+          {
+            title: "Executive-Led Labs",
+            desc: "Participate in intimate, case-driven masterclasses guided by senior corporate directors and executive mentors."
+          }
+        ],
+        ctaText: "Explore Upcoming Workshops →",
+        ctaPrefill: "Boya Career Accelerator Workshops"
+      },
+      clinics: {
+        title: "Boya Sports Clinics & Fundamentals",
+        tagline: "Athletic Literacy, Community Equity & Lifelong Wellness",
+        tags: ["Philanthropy", "501(c)(3) Subsidized", "Sports & Community"],
+        image: "https://images.unsplash.com/photo-1554068865-24cecd4e34b8?auto=format&fit=crop&w=1200&q=80",
+        imageCaption: "Tennis • Pickleball • Badminton",
+        intro: [
+          "The <strong>Boya Sports Clinics & Fundamentals</strong> series is a philanthropic educational initiative presented by Boya Professional Alliance Inc. (BPAUS). Organized on a quarterly and biannual cadence, the program offers accessible, structured clinics in lifetime sports, including tennis, pickleball, badminton, and beyond.",
+          "In professional communities, sports literacy serves as a vital medium for ethical leadership, resilience, and organic social connection. Rooted in BPAUS’s 501(c)(3) mission, this initiative ensures equal access by delivering formal athletic coaching while directly subsidizing participation expenses for students and early-career talent."
+        ],
+        pillars: [
+          {
+            title: "Structured Fundamental Instruction",
+            desc: "Led by qualified coaches, clinics prioritize foundational technique, court etiquette, biomechanics, and injury-prevention protocols."
+          },
+          {
+            title: "Educational Equity & Subsidies",
+            desc: "BPAUS directly underwrites court fees, gear access, and coaching costs so financial constraints never impede athletic education."
+          },
+          {
+            title: "Social Fluency & Community Building",
+            desc: "Clinics reframe sports literacy into an organic avenue for cross-sector peer exchange, teamwork, and healthy lifestyle habits outside corporate settings."
+          }
+        ],
+        ctaText: "View Clinic Schedule & Subsidies →",
+        ctaPrefill: "Boya Sports Clinics & Fundamentals (Schedule & Subsidies)"
+      }
+    };
+
+    function openProgramModal(key) {
+      const data = programData[key];
+      if (!data) return;
+
+      document.getElementById('modalTitle').textContent = data.title;
+      document.getElementById('modalTagline').textContent = data.tagline;
+      document.getElementById('modalImage').src = data.image;
+      document.getElementById('modalImage').alt = data.title;
+      document.getElementById('modalCaption').textContent = data.imageCaption;
+
+      // Tags
+      const tagsContainer = document.getElementById('modalTags');
+      tagsContainer.innerHTML = data.tags.map(tag => 
+        `<span class="px-2.5 py-0.5 rounded text-[11px] font-mono font-medium bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">${tag}</span>`
+      ).join('');
+
+      // Introduction
+      const introContainer = document.getElementById('modalIntro');
+      introContainer.innerHTML = data.intro.map(p => `<p>${p}</p>`).join('');
+
+      // Pillars
+      const pillarsContainer = document.getElementById('modalPillars');
+      pillarsContainer.innerHTML = data.pillars.map(pillar => `
+        <li class="flex items-start gap-2.5">
+          <span class="w-2 h-2 rounded-full bg-berggruen-blue shrink-0 mt-2"></span>
+          <span><strong class="font-semibold text-berggruen-ink">${pillar.title}:</strong> ${pillar.desc}</span>
+        </li>
+      `).join('');
+
+      // CTA
+      const ctaBtn = document.getElementById('modalCTA');
+      ctaBtn.textContent = data.ctaText;
+      ctaBtn.onclick = function() {
+        closeProgramModal();
+        prefillProgram(data.ctaPrefill);
+      };
+
+      const modal = document.getElementById('programModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeProgramModal() {
+      const modal = document.getElementById('programModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    function handleModalBackdropClick(e) {
+      if (e.target.id === 'programModal') {
+        closeProgramModal();
+      }
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeProgramModal();
+      }
+    });
+
+    function prefillProgram(programName) {
+      const subjectInput = document.getElementById('contactSubject');
+      if (subjectInput) {
+        subjectInput.value = programName;
+        subjectInput.scrollIntoView({ behavior: 'smooth' });
+        setTimeout(() => subjectInput.focus(), 600);
+      }
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      document.getElementById('contactForm').reset();
+      const msg = document.getElementById('formSuccess');
+      msg.classList.remove('hidden');
+      setTimeout(() => msg.classList.add('hidden'), 4000);
+    }
+  </script>
+
+</body>
+</html>
