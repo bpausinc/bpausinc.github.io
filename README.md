@@ -12,6 +12,13 @@ This website is styled with a **minimalist intellectual visual identity** inspir
 
 ---
 
+## 🎯 Mission & Vision Statement
+
+- **Mission:** Boya Professional Alliance, Inc. bridges ambition and purpose. We connect, develop, and inspire forward-thinking professionals by delivering cutting-edge industry workshops, rigorous mentorship programs, and healthy community sports initiatives. We believe in building a transparent, supportive network where talent thrives on merit, shared growth, and lasting community impact.
+- **Vision Statement:** To build an open, borderless platform where professionals support one another through authentic mentorship, continuous learning, and lifelong wellness.
+
+---
+
 ## 🏛️ Core Program Pillars (Click-to-View Architecture)
 
 1. **Boya Roundtable Series**
