@@ -7,15 +7,15 @@ This website is styled with a **minimalist intellectual visual identity** inspir
 ## 🏛️ Prominent Hero Brand Positioning
 
 - **Primary Headline (H1):** **`Boya Professional Alliance, Inc.`** (commanding 60px–72px display typography at the foremost position of the page).
-- **Philosophical Tagline:** *Intellectual breadth. Moral distinction. Interdisciplinary advancement.*
+- **Official Slogan:** *Boundless Minds. Bold Impact. Future Leaders in Industry & Philanthropy.*
 - **Affiliation Tag:** *New York 501(c)(3) Public Charity &bull; 博雅新青年 (BPAUS)*
 
 ---
 
-## 🎯 Mission & Vision Statement
+## 🎯 Official Mission & Slogan
 
-- **Mission:** Boya Professional Alliance, Inc. bridges ambition and purpose. We connect, develop, and inspire forward-thinking professionals by delivering cutting-edge industry workshops, rigorous mentorship programs, and healthy community sports initiatives. We believe in building a transparent, supportive network where talent thrives on merit, shared growth, and lasting community impact.
-- **Vision Statement:** To build an open, borderless platform where professionals support one another through authentic mentorship, continuous learning, and lifelong wellness.
+- **Mission Statement:** We connect bright minds across disciplines and generations, turning shared wisdom and civic spirit into real-world impact—shaping future leaders in industry and philanthropy.
+- **Brand Slogan:** Boundless Minds. Bold Impact. Future Leaders in Industry & Philanthropy.
 
 ---
 
@@ -52,7 +52,9 @@ This website is styled with a **minimalist intellectual visual identity** inspir
 
 - **Official Email:** `BPAUS2026@gmail.com`
 - **Domicile:** State of New York, United States
-- **Corporate Matching:** Registered under `Boya Professional Alliance, Inc.`
+- **Accepted Giving Channels:** Zelle, Zeffy, Credit Card, Check, and Corporate Employer Matching (Verified on **Benevity** & **YourCause** under `Boya Professional Alliance, Inc.`). Please inquire via `BPAUS2026@gmail.com`.
+- **Special Features:** 2026 Thanksgiving Dispatch Reader (*"Warmth in the Winter Chill"*) pairing an authentic Thanksgiving autumn red maple leaves photograph (`assets/thanksgiving-maple-leaves.jpg`) with an architectural split-scroll verbatim letter reader styled in an elegant, legible penmanship font (**Caveat**).
+- **Imagery Standards:** All cartoon/anime-style illustrations replaced with 100% authentic, royalty-free editorial photography across the Hero Flagship Gathering card, News, and Thanksgiving dispatches.
 
 ---
 
