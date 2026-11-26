@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Boya Professional Alliance, Inc. | 博雅新青年</title>
-  <meta name="description" content="Boya Professional Alliance, Inc. (博雅新青年 / BPAUS) is a New York-incorporated 501(c)(3) non-profit organization.">
+  <meta name="description" content="Boya Professional Alliance, Inc. (博雅新青年 / BPAUS) is a New York 501(c)(3) public charity. Boundless Minds. Bold Impact. Future Leaders in Industry &amp; Philanthropy.">
   
   <!-- Official Favicon -->
   <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
@@ -16,90 +16,142 @@
       theme: {
         extend: {
           colors: {
-            // Minimalist intellectual light & soft mint palette
             berggruen: {
-              blue: '#5DB8A6',       // Light, soft, desaturated mint
-              darkblue: '#367B6D',   // Refined eucalyptus hover state
-              navy: '#203A34',       // Softer muted slate-pine foundation
-              lightmint: '#AEE4D8',  // Delicate luminous mint for dark accents
-              softmint: '#F0F8F5',   // Airy, whisper-light mint wash for tags & cards
-              paper: '#FAF9F6',      // Warm Architectural Linen/Paper
-              card: '#F5F9F7',       // Subtle soft mint-tinted sandstone
-              border: '#E2ECE7',     // Soft, delicate hairline divider
-              ink: '#151C1A',        // Charcoal Black Body
-              muted: '#62736D',      // Gentle Slate-Sage Caption
+              blue: '#4FA393',       // Refined desaturated mint
+              darkblue: '#2C6E61',   // Deep eucalyptus hover
+              forest: '#1E3B33',     // Slate-forest foundation
+              navy: '#152924',       // Grounded deep pine-navy foundation
+              lightmint: '#B9E8DD',  // Luminous delicate mint for dark backgrounds
+              softmint: '#EDF7F4',   // Whisper-light mint tint for badges & pills
+              paper: '#FAF9F6',      // Warm architectural paper
+              card: '#F6FAF8',       // Soft sandstone card tint
+              border: '#E1ECE7',     // Soft hairline divider
+              borderLight: '#EDF5F1',
+              ink: '#131B19',        // Deep charcoal body ink
+              muted: '#5F736C',      // Gentle slate-sage caption
             }
           },
           fontFamily: {
             sans: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', '-apple-system', 'sans-serif'],
             serif: ['"Playfair Display"', 'Georgia', 'serif'],
+          },
+          boxShadow: {
+            'fine': '0 1px 3px 0 rgba(19, 27, 25, 0.04), 0 1px 2px -1px rgba(19, 27, 25, 0.03)',
+            'lift': '0 12px 28px -6px rgba(19, 43, 36, 0.08), 0 4px 10px -2px rgba(19, 43, 36, 0.04)',
+            'lift-lg': '0 20px 38px -8px rgba(19, 43, 36, 0.12), 0 8px 16px -3px rgba(19, 43, 36, 0.06)',
+            'glow': '0 0 40px -10px rgba(79, 163, 147, 0.28)',
           }
         }
       }
     }
   </script>
 
-  <!-- Google Fonts: Plus Jakarta Sans & Playfair Display -->
+  <!-- Google Fonts: Plus Jakarta Sans, Playfair Display & Kalam (Upright Handwriting) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,500;1,600&family=Kalam:wght@300;400;700&family=Patrick+Hand&display=swap" rel="stylesheet">
 
   <style>
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: #FAF9F5;
-      color: #111317;
+      background-color: #FAF9F6;
+      color: #131B19;
     }
     .serif-display {
       font-family: 'Playfair Display', serif;
     }
+    /* Upright, non-slanted, authentic handwriting font */
+    .font-handwriting {
+      font-family: 'Kalam', 'Patrick Hand', cursive, system-ui, -apple-system, sans-serif;
+      font-style: normal !important;
+    }
+    /* Architectural background grid */
+    .bg-grid-pattern {
+      background-image: radial-gradient(rgba(30, 59, 51, 0.065) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    .ambient-glow {
+      background: radial-gradient(ellipse 70% 50% at 50% -10%, rgba(79, 163, 147, 0.12) 0%, rgba(250, 249, 246, 0) 70%);
+    }
     .img-zoom {
-      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .group:hover .img-zoom {
-      transform: scale(1.04);
+      transform: scale(1.045);
+    }
+    /* Event filter transitions */
+    .event-card {
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+    .event-card.hidden-card {
+      display: none;
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    /* Letter Custom Scrollbar */
+    .letter-scroll::-webkit-scrollbar {
+      width: 6px;
+    }
+    .letter-scroll::-webkit-scrollbar-track {
+      background: #F1ECE4;
+      border-radius: 9999px;
+    }
+    .letter-scroll::-webkit-scrollbar-thumb {
+      background: #4FA393;
+      border-radius: 9999px;
+    }
+    .letter-scroll::-webkit-scrollbar-thumb:hover {
+      background: #2C6E61;
     }
   </style>
 </head>
-<body class="antialiased flex flex-col min-h-screen selection:bg-berggruen-lightmint selection:text-berggruen-navy">
+<body class="antialiased flex flex-col min-h-screen selection:bg-berggruen-lightmint selection:text-berggruen-navy bg-grid-pattern">
 
-  <!-- BERGGRUEN STYLE NAVIGATION (Minimalist Header) -->
-  <header class="sticky top-0 z-50 bg-[#FAF9F5]/95 backdrop-blur-md border-b border-berggruen-border transition-all">
+  <!-- ========================================== -->
+  <!-- HEADER & NAVIGATION                        -->
+  <!-- ========================================== -->
+  <header class="sticky top-0 z-50 bg-[#FAF9F6]/95 backdrop-blur-md border-b border-berggruen-border transition-all">
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
         
-        <!-- Logo & Organization Name -->
+        <!-- Logo & Brand Header -->
         <a href="#" class="flex items-center gap-3.5 group">
-          <img src="assets/logo.jpg" alt="Logo" class="w-10 h-10 object-contain rounded-md border border-berggruen-border bg-white shadow-xs">
+          <div class="relative w-10 h-10 shrink-0">
+            <img src="assets/logo.jpg" alt="Logo" class="w-10 h-10 object-contain rounded-lg border border-berggruen-border bg-white shadow-fine group-hover:border-berggruen-blue transition-colors">
+            <span class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-emerald-500 border-2 border-white ring-1 ring-emerald-500/20"></span>
+          </div>
           <div class="flex flex-col">
-            <span class="font-extrabold text-berggruen-ink text-base tracking-tight leading-snug group-hover:text-berggruen-blue transition-colors">
+            <span class="font-extrabold text-berggruen-ink text-base tracking-tight leading-snug group-hover:text-berggruen-darkblue transition-colors">
               Boya Professional Alliance, Inc.
             </span>
-            <span class="text-[11px] text-berggruen-muted font-medium tracking-wide uppercase">
-              博雅新青年 &bull; BPAUS
+            <span class="text-[11px] text-berggruen-muted font-medium tracking-wider uppercase flex items-center gap-1.5">
+              <span>博雅新青年</span>
+              <span class="text-slate-300">&bull;</span>
+              <span class="font-mono text-[10px] text-emerald-800 bg-berggruen-softmint px-1.5 py-0.2 rounded border border-berggruen-border/70">501(c)(3)</span>
             </span>
           </div>
         </a>
 
-        <!-- Desktop Navigation: 5 Major Columns -->
-        <nav class="hidden md:flex items-center space-x-8 text-[13px] font-semibold text-slate-700">
-          <a href="#about" class="hover:text-berggruen-blue transition-colors py-1">About Us</a>
-          <a href="#programs" class="hover:text-berggruen-blue transition-colors py-1">Our Programs</a>
-          <a href="#events" class="hover:text-berggruen-blue transition-colors py-1">Past Events</a>
-          <a href="#news" class="hover:text-berggruen-blue transition-colors py-1">News</a>
-          <a href="#contact" class="hover:text-berggruen-blue transition-colors py-1">Contact Us</a>
+        <!-- Desktop Navigation: 5 Primary Columns -->
+        <nav class="hidden md:flex items-center space-x-7 text-[13px] font-semibold text-slate-700">
+          <a href="#about" class="hover:text-berggruen-darkblue transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-berggruen-blue hover:after:w-full after:transition-all">About Us</a>
+          <a href="#programs" class="hover:text-berggruen-darkblue transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-berggruen-blue hover:after:w-full after:transition-all">Our Programs</a>
+          <a href="#events" class="hover:text-berggruen-darkblue transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-berggruen-blue hover:after:w-full after:transition-all">Past Events</a>
+          <a href="#news" class="hover:text-berggruen-darkblue transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-berggruen-blue hover:after:w-full after:transition-all">News</a>
+          <a href="#contact" class="hover:text-berggruen-darkblue transition-colors py-1 relative after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-berggruen-blue hover:after:w-full after:transition-all">Contact Us</a>
         </nav>
 
         <!-- Right Action Button: Donate -->
-        <div class="hidden sm:flex items-center">
-          <a href="#donate" class="px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-berggruen-blue text-[#152E28] hover:bg-berggruen-darkblue hover:text-white shadow-xs transition-all">
-            Donate
+        <div class="hidden sm:flex items-center gap-3">
+          <a href="#donate" class="px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-berggruen-blue text-[#112420] hover:bg-berggruen-darkblue hover:text-white shadow-fine hover:shadow-lift transition-all flex items-center gap-1.5">
+            <span>Support &amp; Donate</span>
+            <span class="text-[10px]">&rarr;</span>
           </a>
         </div>
 
-        <!-- Mobile Trigger -->
+        <!-- Mobile Menu Trigger -->
         <div class="flex md:hidden">
-          <button id="mobileMenuBtn" type="button" class="p-2 text-slate-700 hover:text-berggruen-blue focus:outline-none" aria-label="Toggle menu">
+          <button id="mobileMenuBtn" type="button" class="p-2 rounded-lg text-slate-700 hover:text-berggruen-darkblue hover:bg-white border border-transparent hover:border-berggruen-border focus:outline-none transition-colors" aria-label="Toggle menu">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
@@ -109,15 +161,15 @@
     </div>
 
     <!-- Mobile Dropdown -->
-    <div id="mobileMenu" class="hidden md:hidden bg-[#FAF9F5] border-b border-berggruen-border px-6 py-5 space-y-4 shadow-lg">
+    <div id="mobileMenu" class="hidden md:hidden bg-[#FAF9F6] border-b border-berggruen-border px-6 py-5 space-y-3.5 shadow-lift">
       <a href="#about" class="block text-sm font-semibold text-slate-800 hover:text-berggruen-blue" onclick="toggleMobileMenu()">About Us</a>
       <a href="#programs" class="block text-sm font-semibold text-slate-800 hover:text-berggruen-blue" onclick="toggleMobileMenu()">Our Programs</a>
       <a href="#events" class="block text-sm font-semibold text-slate-800 hover:text-berggruen-blue" onclick="toggleMobileMenu()">Past Events</a>
       <a href="#news" class="block text-sm font-semibold text-slate-800 hover:text-berggruen-blue" onclick="toggleMobileMenu()">News</a>
       <a href="#contact" class="block text-sm font-semibold text-slate-800 hover:text-berggruen-blue" onclick="toggleMobileMenu()">Contact Us</a>
       <div class="pt-2">
-        <a href="#donate" onclick="toggleMobileMenu()" class="block w-full py-2.5 rounded-full text-center text-xs font-bold uppercase tracking-wider bg-berggruen-blue text-[#152E28]">
-          Donate
+        <a href="#donate" onclick="toggleMobileMenu()" class="block w-full py-2.5 rounded-full text-center text-xs font-bold uppercase tracking-wider bg-berggruen-blue text-[#112420] shadow-fine">
+          Support &amp; Donate &rarr;
         </a>
       </div>
     </div>
@@ -125,184 +177,508 @@
 
   <main class="flex-grow">
 
-    <!-- HERO SECTION (Prominent Entity Name & Berggruen Editorial Aesthetic) -->
-    <section class="py-20 sm:py-28 bg-[#FAF9F5] border-b border-berggruen-border">
-      <div class="max-w-6xl mx-auto px-6 lg:px-8">
-        <div class="max-w-4xl">
+    <!-- ========================================== -->
+    <!-- HERO SECTION (Intellectual Aesthetic)      -->
+    <!-- ========================================== -->
+    <section class="relative pt-16 pb-20 sm:pt-24 sm:pb-28 border-b border-berggruen-border ambient-glow overflow-hidden">
+      <div class="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
-          <div class="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-berggruen-blue mb-6">
-            <span class="w-2 h-2 rounded-full bg-berggruen-blue"></span>
-            New York 501(c)(3) Public Charity &bull; 博雅新青年 (BPAUS)
+          <!-- Left Column (Brand Narrative & Proposition) -->
+          <div class="lg:col-span-7">
+            
+            <!-- 501(c)(3) Institutional Badge -->
+            <div class="inline-flex items-center gap-2.5 px-3 py-1.5 rounded-full bg-white/80 backdrop-blur-xs border border-berggruen-border text-xs font-mono font-bold uppercase tracking-wider text-berggruen-darkblue mb-7 shadow-fine">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              <span>New York 501(c)(3) Public Charity &bull; 博雅新青年 (BPAUS)</span>
+            </div>
+
+            <!-- Primary Headline (Entity Name) -->
+            <h1 class="text-4xl sm:text-5xl lg:text-[62px] font-extrabold tracking-tight text-berggruen-ink leading-[1.06] mb-6">
+              Boya Professional Alliance, Inc.
+            </h1>
+
+            <!-- Official Brand Slogan -->
+            <div class="text-xl sm:text-2xl text-slate-700 font-light leading-snug mb-7 max-w-2xl">
+              <span class="font-semibold text-berggruen-ink">Boundless Minds.</span> Bold Impact.<br>
+              <span class="serif-display italic font-normal text-berggruen-darkblue text-2xl sm:text-3xl">Future Leaders in Industry &amp; Philanthropy.</span>
+            </div>
+
+            <!-- Official Mission Statement -->
+            <p class="text-base sm:text-lg text-berggruen-muted leading-relaxed font-normal mb-9 max-w-xl">
+              We connect bright minds across disciplines and generations, turning shared wisdom and civic spirit into real-world impact—shaping future leaders in industry and philanthropy.
+            </p>
+
+            <!-- Call to Actions -->
+            <div class="flex flex-wrap items-center gap-3.5 mb-10">
+              <a href="#donate" class="px-7 py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-berggruen-blue hover:bg-berggruen-darkblue text-[#112420] hover:text-white transition-all shadow-fine hover:shadow-lift flex items-center gap-2">
+                <span>Donate to Boya Alliance</span>
+                <span>&rarr;</span>
+              </a>
+              <a href="#programs" class="px-6 py-3 rounded-full text-xs font-semibold text-slate-800 border border-berggruen-border hover:border-berggruen-darkblue transition-all bg-white hover:bg-berggruen-softmint shadow-fine">
+                Explore Programs
+              </a>
+              <a href="#about" class="px-5 py-3 rounded-full text-xs font-semibold text-slate-600 hover:text-berggruen-ink transition-colors">
+                Read Charter &rarr;
+              </a>
+            </div>
+
           </div>
 
-          <!-- Prominent Entity Name in Primary Headline Position -->
-          <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-berggruen-ink leading-[1.06] mb-6">
-            Boya Professional Alliance, Inc.
-          </h1>
+          <!-- Right Column: Visual Anchor / Flagship Program Preview Card -->
+          <div class="lg:col-span-5">
+            <div class="relative bg-white rounded-3xl p-6 border border-berggruen-border shadow-lift hover:shadow-lift-lg transition-all group">
+              
+              <!-- Subtle decorative corner badge -->
+              <div class="flex items-center justify-between pb-4 mb-4 border-b border-berggruen-border/80 text-xs font-mono">
+                <span class="font-bold text-berggruen-darkblue uppercase tracking-wider flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-berggruen-blue"></span>
+                  Flagship Gathering
+                </span>
+                <span class="text-berggruen-muted">Midtown &bull; Manhattan</span>
+              </div>
 
-          <!-- Intellectual Philosophy & Mission Subtitle -->
-          <div class="text-xl sm:text-2xl text-slate-700 font-light leading-snug mb-8 max-w-3xl">
-            <span class="font-semibold text-berggruen-ink">Intellectual breadth.</span> Moral distinction.<br>
-            <span class="serif-display italic font-normal text-berggruen-blue text-2xl sm:text-3xl">Interdisciplinary advancement.</span>
-          </div>
+              <!-- Real Photography (Standard 16:10 Ratio) -->
+              <div class="w-full aspect-[16/10] rounded-2xl overflow-hidden relative border border-berggruen-border bg-slate-50 shadow-fine mb-4">
+                <img src="assets/roundtable-session-1.jpg" alt="Boya Roundtable Assembly" class="w-full h-full object-cover img-zoom">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between text-white text-[11px] font-mono">
+                  <span class="bg-black/50 backdrop-blur-md px-2.5 py-1 rounded-md border border-white/20">Curated Peer Dialogue</span>
+                  <span class="bg-black/50 backdrop-blur-md px-2 py-1 rounded-md border border-white/20">20–30 Curated Seats</span>
+                </div>
+              </div>
 
-          <p class="text-lg sm:text-xl text-berggruen-muted leading-relaxed font-light mb-10 max-w-2xl">
-            Convening emerging leaders and exceptional professionals at the intersection of commerce and technological innovation across North America.
-          </p>
+              <!-- Intellectual Framing Quote -->
+              <div class="space-y-2">
+                <div class="text-[15px] font-bold text-berggruen-ink group-hover:text-berggruen-darkblue transition-colors leading-snug">
+                  High-Conviction, Peer-to-Peer Strategic Inquiry
+                </div>
+                <p class="text-xs text-berggruen-muted leading-relaxed font-normal">
+                  "Moving beyond generic networking to foster authentic mentorship, interdisciplinary dialogue, and lasting community impact."
+                </p>
+              </div>
 
-          <div class="flex flex-wrap items-center gap-4">
-            <a href="#donate" class="px-7 py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-berggruen-blue hover:bg-berggruen-darkblue text-[#152E28] hover:text-white transition-all shadow-xs">
-              Donate to Boya Alliance &rarr;
-            </a>
-            <a href="#about" class="px-6 py-3 rounded-full text-xs font-semibold text-slate-800 border border-berggruen-border hover:border-berggruen-ink transition-colors bg-white">
-              Read Our Charter
-            </a>
+              <div class="mt-4 pt-3.5 border-t border-slate-100 flex items-center justify-between text-[11px] font-mono text-berggruen-muted">
+                <span>Boya Roundtable Series</span>
+                <a href="#programs" class="font-bold text-berggruen-darkblue hover:underline">View Core Pillars &amp; Horizons &rarr;</a>
+              </div>
+
+            </div>
           </div>
 
         </div>
+
+        <!-- ========================================== -->
+        <!-- IMPACT METRICS BAR (Institutional Anchors) -->
+        <!-- ========================================== -->
+        <div class="mt-14 pt-8 border-t border-berggruen-border/80">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+            
+            <!-- Metric 1 -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-white/70 backdrop-blur-xs border border-berggruen-border shadow-fine hover:border-berggruen-blue/60 transition-colors">
+              <div class="text-[11px] font-mono font-bold uppercase tracking-wider text-berggruen-muted mb-1">Corporate Form</div>
+              <div class="text-2xl sm:text-3xl font-extrabold text-berggruen-ink tracking-tight">501(c)(3)</div>
+              <div class="text-xs text-berggruen-muted font-normal mt-0.5">NY Tax-Exempt Public Charity</div>
+            </div>
+
+            <!-- Metric 2 -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-white/70 backdrop-blur-xs border border-berggruen-border shadow-fine hover:border-berggruen-blue/60 transition-colors">
+              <div class="text-[11px] font-mono font-bold uppercase tracking-wider text-berggruen-muted mb-1">Participant Network</div>
+              <div class="text-2xl sm:text-3xl font-extrabold text-berggruen-ink tracking-tight">300+</div>
+              <div class="text-xs text-berggruen-muted font-normal mt-0.5">Vetted Leaders &amp; Specialists</div>
+            </div>
+
+            <!-- Metric 3 (Expanding Ecosystem) -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-white/70 backdrop-blur-xs border border-berggruen-border shadow-fine hover:border-berggruen-blue/60 transition-colors">
+              <div class="text-[11px] font-mono font-bold uppercase tracking-wider text-berggruen-muted mb-1">Program Ecosystem</div>
+              <div class="text-2xl sm:text-3xl font-extrabold text-berggruen-ink tracking-tight flex items-baseline gap-1.5">
+                <span>3+ Pillars</span>
+                <span class="text-[10px] font-mono font-bold text-emerald-800 uppercase tracking-wider bg-berggruen-softmint px-1.5 py-0.5 rounded border border-berggruen-border">Expanding</span>
+              </div>
+              <div class="text-xs text-berggruen-muted font-normal mt-0.5">Foundational Pillars &amp; Emerging Labs</div>
+            </div>
+
+            <!-- Metric 4 (Interdisciplinary Ethos) -->
+            <div class="p-4 sm:p-5 rounded-2xl bg-white/70 backdrop-blur-xs border border-berggruen-border shadow-fine hover:border-berggruen-blue/60 transition-colors">
+              <div class="text-[11px] font-mono font-bold uppercase tracking-wider text-berggruen-muted mb-1">Foundational Ethos</div>
+              <div class="text-xl sm:text-2xl lg:text-[23px] font-extrabold text-berggruen-ink tracking-tight leading-tight">Interdisciplinary</div>
+              <div class="text-xs text-berggruen-muted font-normal mt-0.5">Commerce, Tech &amp; Community Impact</div>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </section>
 
+<!-- ========================================== -->
+    <!-- SPECIAL THANKSGIVING DISPATCH (2026)       -->
     <!-- ========================================== -->
-    <!-- 1. ABOUT US                                -->
+    <section id="thanksgiving-letter" class="py-12 lg:py-16 bg-[#FAF7F2] border-b border-[#E8DFD3] relative overflow-hidden">
+      <!-- Decorative ambient warm glow -->
+      <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[720px] h-[280px] bg-gradient-to-b from-[#F2E8D8]/50 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
+        
+        <!-- Header Bar with Badge and Scroll / Expand Controls -->
+        <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+          <div class="flex items-center gap-2.5">
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono font-bold tracking-wider uppercase bg-[#F3ECE1] text-[#7A5A2B] border border-[#E3D4C0]">
+              <span class="w-2 h-2 rounded-full bg-[#C99742] animate-pulse"></span>
+              <span>Thanksgiving 2026 • Community Dispatch</span>
+            </span>
+            <span class="text-xs font-mono text-[#8C7A68] hidden sm:inline-block">Special Editorial Message</span>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <button type="button" onclick="toggleLetterExpansion()" class="inline-flex items-center gap-1.5 text-xs font-semibold text-berggruen-darkblue hover:text-berggruen-forest transition-colors py-1.5 px-3.5 rounded-lg hover:bg-[#F2ECE1] border border-[#E3D8CB] bg-[#FFFDF9] shadow-fine">
+              <span id="expandBtnText">Expand Full Letter</span>
+              <svg id="expandBtnIcon" class="w-3.5 h-3.5 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Editorial Split Grid: Left Artwork & Right Scrollable Letter -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+          
+          <!-- Left Column: Real Photography Thanksgiving Card (5 Cols) -->
+          <div class="lg:col-span-5 bg-[#FFFDF9] rounded-3xl border border-[#E7DCD0] shadow-lift p-4 sm:p-5 flex flex-col justify-between">
+            <div>
+              <!-- Photography Frame -->
+              <div class="w-full aspect-[16/10] sm:aspect-[4/3] rounded-2xl overflow-hidden relative border border-[#E8DFD3] shadow-fine group bg-[#152924]">
+                <img src="assets/thanksgiving-maple-leaves.jpg" alt="Thanksgiving Red Maple Leaves • Warmth in the Winter Chill" class="w-full h-full object-cover img-zoom">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/65 via-black/15 to-transparent"></div>
+                <div class="absolute bottom-3.5 left-3.5 right-3.5 text-white">
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold tracking-wider uppercase bg-white/20 backdrop-blur-md text-white border border-white/30">
+                    Thanksgiving Season
+                  </span>
+                  <div class="text-sm font-semibold mt-1 text-white/95">Autumn Foliage &amp; Winter Warmth • North America</div>
+                </div>
+              </div>
+
+              <!-- Evocative Quote Callout -->
+              <div class="mt-4 p-4 rounded-2xl bg-[#F8F5EE] border border-[#EBE3D6]">
+                <p class="font-serif italic text-xs sm:text-sm text-[#4E4439] leading-relaxed">
+                  &ldquo;Times and cycles may bring a passing chill, yet the kindness, professionalism, and sincerity of a united community are more than enough to warm the longest winter night.&rdquo;
+                </p>
+                <div class="mt-2.5 text-[11px] font-mono font-bold text-berggruen-darkblue">
+                  — Boya Professional Alliance (BPAUS)
+                </div>
+              </div>
+            </div>
+
+            <!-- Milestone Ribbon -->
+            <div class="grid grid-cols-3 gap-2 mt-4 pt-4 border-t border-[#EDE4D8] text-center">
+              <div class="p-2 rounded-xl bg-[#FAF8F5]">
+                <div class="text-base sm:text-lg font-extrabold text-berggruen-darkblue">500+</div>
+                <div class="text-[10px] font-mono text-[#7A6C5D] uppercase mt-0.5">Participants</div>
+              </div>
+              <div class="p-2 rounded-xl bg-[#FAF8F5]">
+                <div class="text-base sm:text-lg font-extrabold text-berggruen-darkblue">501(c)(3)</div>
+                <div class="text-[10px] font-mono text-[#7A6C5D] uppercase mt-0.5">IRS Approved</div>
+              </div>
+              <div class="p-2 rounded-xl bg-[#FAF8F5]">
+                <div class="text-base sm:text-lg font-extrabold text-berggruen-darkblue">&lt; 4 Mos</div>
+                <div class="text-[10px] font-mono text-[#7A6C5D] uppercase mt-0.5">10+ Events</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Scrollable Letter Window (7 Cols) (Original Text Verbatim) -->
+          <div class="lg:col-span-7 bg-[#FFFDF9] rounded-3xl border border-[#E7DCD0] shadow-lift p-6 sm:p-8 lg:p-9 flex flex-col justify-between">
+            
+            <!-- Scrollable Letter Body (Upright Handwriting Styled Letter) -->
+            <div id="letterScrollBox" class="max-h-[500px] overflow-y-auto letter-scroll pr-3 sm:pr-4 space-y-6 text-[#29221B] font-handwriting text-base sm:text-[18px] leading-[1.85] transition-all">
+              
+              <!-- Verbatim Title -->
+              <div class="pb-5 border-b border-[#EDE4D8]">
+                <h2 class="font-handwriting text-xl sm:text-2xl lg:text-[26px] font-bold text-berggruen-ink leading-snug">
+                  Warmth in the Winter Chill | 2026 Thanksgiving Message from Boya Professional Alliance (BPAUS)
+                </h2>
+              </div>
+
+              <!-- Paragraph 1 -->
+              <p>
+                The winter of 2026 feels especially brisk for international students and professionals building their lives in North America. Shifting macro winds and evolving visa pathways have made every step of putting down roots abroad harder than before. Yet the founding team of Boya Professional Alliance (BPAUS) and the thousands of peers beside us are precisely those who stand firm in the storm—anchoring their lives in knowledge, hard work, and resilience.
+              </p>
+
+              <!-- Paragraph 2 -->
+              <p>
+                Having weathered similar headwinds ourselves, we deeply understand the grit and aspirations that bind our community together. Drawn from classical Han dynasty literature, the name "Boya" (博雅) embodies broad learning and upright character, resonating closely with the Western liberal arts tradition. Positioned at the forefront of business and technology in North America, we embrace a spirit of boundlessness—welcoming talent regardless of background or alma mater, united purely by public-spiritedness, genuine dedication, and shared ideals. As a true community of the younger generation, we value action and accountability over titles or seniority. Our core executive team is powered primarily by professionals from the 1980s through 2000s generations, who will also take the helm of our future Board of Directors. At the same time, our generous circle of sponsors spans across generations from the 1960s to the 2000s—from the financial backing of seasoned mentors to the wholehearted support of our peers, every tangible contribution is deeply cherished. We strive to build a bridge for cross-disciplinary exchange and collaboration—beginning with passion, guided by ideals, gathering bright minds, and walking forward in wisdom—so that young doers can grow through real-world leadership into the next generation of industry pioneers and civic leaders.
+              </p>
+
+              <!-- Paragraph 3 -->
+              <p>
+                Since our official launch in late July 2026 and receiving IRS 501(c)(3) federal tax-exempt status in mid-October, BPAUS has delivered a vibrant and meaningful first chapter in less than four months:
+              </p>
+
+              <!-- Verbatim Program & Event List -->
+              <div class="space-y-4 my-2 pl-3 border-l-2 border-berggruen-blue/40">
+                <div>
+                  <div class="font-bold text-berggruen-forest text-lg sm:text-[20px]">Boya Roundtable (Nearly 200 cumulative attendees)</div>
+                  <div class="mt-1 space-y-1 text-[#3D3328] text-sm sm:text-[17px]">
+                    <div>11/6 | Opportunities and Challenges for Quants in the AI Era (Part I)</div>
+                    <div>11/12 | Opportunities and Challenges for Quants in the AI Era (Part II)</div>
+                    <div>12/4 | When We Build Agents, What Are We Really Wrestling With in AI? (Upcoming)</div>
+                    <div>12/12 | x Coffee with Onlu | Infrastructure &amp; Digital Infra Panel (Upcoming)</div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="font-bold text-berggruen-forest text-lg sm:text-[20px]">BOYA Career Accelerator Workshop (Over 100 cumulative attendees)</div>
+                  <div class="mt-1 space-y-1 text-[#3D3328] text-sm sm:text-[17px]">
+                    <div>8/15 | The Power of English Communication</div>
+                    <div>10/23 | Hidden Competitive Advantages for Career Advancement</div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="font-bold text-berggruen-forest text-lg sm:text-[20px]">BPAUS Sports Fundamentals &amp; Clinics (Over 200 cumulative attendees)</div>
+                  <div class="mt-1 space-y-1 text-[#3D3328] text-sm sm:text-[17px]">
+                    <div>8/30 | Tennis</div>
+                    <div>9/26 | Pickleball</div>
+                    <div>12/5 | Badminton (Upcoming)</div>
+                    <div>12/20 | Tennis (Upcoming)</div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="font-bold text-berggruen-forest text-lg sm:text-[20px]">Social &amp; Networking Events (Nearly 100 attendees)</div>
+                  <div class="mt-1 space-y-1 text-[#3D3328] text-sm sm:text-[17px]">
+                    <div>11/13 | "Don't Go Home After Work" Young Professionals Social Party</div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="font-bold text-berggruen-forest text-lg sm:text-[20px]">Online Public Welfare Lectures</div>
+                  <div class="mt-1 space-y-1 text-[#3D3328] text-sm sm:text-[17px]">
+                    <div>9/30 | AI Literacy Public Lecture</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Paragraph 4 -->
+              <p>
+                Four months of intensive effort mark only a modest debut for Boya Professional Alliance—our journey has just begun. Ahead lies a broader stage of greater ambition and impact, reaching more fellow travelers and uniting an even stronger force for good.
+              </p>
+
+              <!-- Paragraph 5 -->
+              <p>
+                From scattered sparks to a thriving community, every milestone carries the warmth of your support. This Thanksgiving, the Executive Team and Board of Directors of Boya Professional Alliance extend our deepest gratitude to everyone who has chosen to walk alongside us and light the way forward:
+              </p>
+
+              <!-- Verbatim 5 Thank-Yous -->
+              <div class="space-y-3 pl-3 border-l-2 border-berggruen-blue/40">
+                <p>
+                  Thank you to our Founding Directors, whose foresight and sense of responsibility charted our course from day one and built this nonprofit spiritual home for international students, scholars, and professionals;
+                </p>
+                <p>
+                  Thank you to our Executive Team led by Ms. Chengcheng Qin, whose tireless dedication and seamless execution over the past hundred-plus days brought every intellectual exchange and community gathering to life;
+                </p>
+                <p>
+                  Thank you to every generous Sponsor, especially the many friends who stepped forward with financial support out of pure trust even before our 501(c)(3) tax-exempt status was officially approved in mid-October—your selfless backing gives us the confidence to move steadily forward amid uncertainty;
+                </p>
+                <p>
+                  Thank you to every Speaker and Coach, who shared their insights, experience, and encouragement without reservation when our community needed direction and inspiration most;
+                </p>
+                <p>
+                  And above all, thank you to the more than 500 participants and fellow travelers who showed up, spoke up, swung a racket, and shared candid conversations—proving that however long the road ahead, none of us walks alone.
+                </p>
+              </div>
+
+              <!-- Paragraph 6 & 7 -->
+              <p>
+                Times and cycles may bring a passing chill, yet the kindness, professionalism, and sincerity of a united community are more than enough to warm the longest winter night. Thank you for making "Boya Professional Alliance" not merely a name, but a true harbor for us all.
+              </p>
+
+              <p class="font-handwriting font-bold text-xl sm:text-[23px] text-berggruen-forest leading-relaxed">
+                Wishing you a joyful Thanksgiving! May warmth fill your hearts, light guide your steps, and peace stay with you through every season.
+              </p>
+
+              <!-- Verbatim Signoff -->
+              <div class="pt-5 border-t border-[#EDE4D8] mt-6 flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+                <div>
+                  <div class="font-bold text-berggruen-ink text-base sm:text-lg font-handwriting">The Executive Team &amp; Board of Directors, Boya Professional Alliance (BPAUS)</div>
+                </div>
+                <div class="font-handwriting text-sm sm:text-base text-[#8C7A68]">
+                  Thanksgiving 2026
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Bottom helper caption -->
+            <div class="mt-4 pt-3 border-t border-[#EDE4D8] flex items-center justify-between text-xs text-[#8C7A68]">
+              <span class="font-mono">Scroll inside box to read full letter</span>
+              <button type="button" onclick="toggleLetterExpansion()" class="text-berggruen-darkblue hover:text-berggruen-forest font-semibold">
+                Toggle Full View ↑
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+    <!-- ========================================== -->
+    <!-- 1. ABOUT US (Charter & Leadership)         -->
     <!-- ========================================== -->
     <section id="about" class="py-20 lg:py-24 bg-white border-b border-berggruen-border">
       <div class="max-w-6xl mx-auto px-6 lg:px-8">
         
         <div class="max-w-3xl mb-12">
-          <div class="text-xs font-mono font-bold uppercase tracking-widest text-berggruen-blue mb-2">01 / About Us</div>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-berggruen-ink tracking-tight">Mission, Vision &amp; Leadership</h2>
-          <p class="text-sm text-berggruen-muted mt-2 font-light leading-relaxed">
-            Institutional non-profit mission, vision, and executive officers stewarding Boya Professional Alliance.
+          <div class="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-berggruen-darkblue mb-2.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-berggruen-blue"></span>
+            <span>01 / About Us</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-berggruen-ink tracking-tight">Mission, Vision &amp; Governance</h2>
+          <p class="text-sm sm:text-base text-berggruen-muted mt-2 font-light leading-relaxed">
+            Institutional non-profit mission, public purpose, and executive officers stewarding Boya Professional Alliance.
           </p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
           
-          <!-- Left: Official Charter Card (Wider: 7 Columns) -->
-          <div class="lg:col-span-7 bg-[#FAF9F5] p-8 sm:p-10 rounded-2xl border border-berggruen-border shadow-xs flex flex-col justify-between">
+          <!-- Left: Official Charter Card (7 Columns) -->
+          <div class="lg:col-span-7 bg-[#FAF9F6] p-8 sm:p-10 rounded-3xl border border-berggruen-border shadow-fine flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between pb-3.5 mb-6 border-b border-berggruen-border">
                 <div class="flex items-center gap-2">
                   <span class="w-2 h-2 rounded-full bg-berggruen-blue"></span>
-                  <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-berggruen-ink">Mission &amp; Vision</h3>
+                  <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-berggruen-ink">Institutional Charter</h3>
                 </div>
-                <span class="text-[11px] font-mono text-berggruen-muted">501(c)(3) Nonprofit</span>
+                <span class="text-[11px] font-mono text-emerald-800 bg-berggruen-softmint px-2 py-0.5 rounded border border-berggruen-border">501(c)(3) Nonprofit</span>
               </div>
 
               <div class="text-berggruen-ink text-[15px] sm:text-base leading-relaxed space-y-4 font-normal">
-                <p>
-                  <strong class="font-bold text-berggruen-ink">Boya Professional Alliance, Inc.</strong> bridges ambition and purpose. We connect, develop, and inspire forward-thinking professionals by delivering cutting-edge industry workshops, rigorous mentorship programs, and healthy community sports initiatives.
+                <div class="border-b border-berggruen-border/70 pb-4">
+                  <div class="text-[11px] font-mono font-bold uppercase tracking-wider text-berggruen-darkblue mb-1.5 flex items-center gap-1.5">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                    <span>Official Mission</span>
+                  </div>
+                  <p class="text-lg sm:text-xl font-bold text-berggruen-ink leading-snug">
+                    We connect bright minds across disciplines and generations, turning shared wisdom and civic spirit into real-world impact—shaping future leaders in industry and philanthropy.
+                  </p>
+                </div>
+
+                <p class="text-slate-700 leading-relaxed font-normal pt-1">
+                  <strong class="font-bold text-berggruen-ink">Boya Professional Alliance, Inc.</strong> bridges ambition and public purpose. Through rigorous industry roundtables, cohort-based career accelerator labs, and subsidized community athletics, we cultivate an authentic cross-generational network where talent thrives on merit, shared growth, and lasting civic contribution.
                 </p>
-                <p class="text-slate-700">
-                  We believe in building a transparent, supportive network where talent thrives on merit, shared growth, and lasting community impact.
-                </p>
-                <div class="border-l-2 border-berggruen-blue pl-4 py-2.5 bg-white/70 rounded-r-lg mt-5 border border-l-berggruen-blue border-berggruen-border/50">
-                  <div class="text-[11px] font-mono font-bold uppercase tracking-wider text-berggruen-blue mb-1">Vision Statement</div>
-                  <p class="text-berggruen-ink italic font-medium text-[14px] sm:text-[15px] leading-relaxed">
-                    To build an open, borderless platform where professionals support one another through authentic mentorship, continuous learning, and lifelong wellness.
+                
+                <!-- Stylized Slogan Box -->
+                <div class="relative bg-white p-5 rounded-2xl border-l-4 border-l-berggruen-blue border border-berggruen-border shadow-fine mt-5">
+                  <div class="text-[11px] font-mono font-bold uppercase tracking-wider text-berggruen-darkblue mb-1.5 flex items-center gap-1.5">
+                    <span>Alliance Slogan</span>
+                  </div>
+                  <p class="serif-display text-berggruen-ink italic text-lg sm:text-xl leading-relaxed font-normal">
+                    &ldquo;Boundless Minds. Bold Impact. Future Leaders in Industry &amp; Philanthropy.&rdquo;
                   </p>
                 </div>
               </div>
             </div>
 
-            <div class="pt-5 mt-6 border-t border-berggruen-border/80 flex flex-wrap items-center justify-between text-xs text-berggruen-muted font-mono">
-              <span>New York 501(c)(3) Public Charity</span>
+            <div class="pt-6 mt-8 border-t border-berggruen-border flex flex-wrap items-center justify-between text-xs text-berggruen-muted font-mono">
+              <span class="flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                New York 501(c)(3) Public Charity
+              </span>
               <span>博雅新青年 &bull; BPAUS</span>
             </div>
           </div>
 
-          <!-- Right: Core Leadership (Sleeker & Narrower: 5 Columns) -->
-          <div class="lg:col-span-5 bg-[#FAF9F5] p-6 sm:p-7 rounded-2xl border border-berggruen-border shadow-xs flex flex-col justify-between">
+          <!-- Right: Core Leadership (5 Columns) -->
+          <div class="lg:col-span-5 bg-[#FAF9F6] p-6 sm:p-7 rounded-3xl border border-berggruen-border shadow-fine flex flex-col justify-between">
             <div>
               <div class="flex items-center justify-between pb-3.5 mb-4 border-b border-berggruen-border">
                 <div class="flex items-center gap-2">
                   <span class="w-2 h-2 rounded-full bg-berggruen-blue"></span>
-                  <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-berggruen-ink">Core Leadership</h3>
+                  <h3 class="text-xs font-mono font-bold uppercase tracking-wider text-berggruen-ink">Executive Stewardship</h3>
                 </div>
-                <span class="text-[11px] font-mono text-berggruen-muted">Executive Officers</span>
+                <span class="text-[11px] font-mono text-berggruen-muted">Officer Roster</span>
               </div>
 
               <!-- Executive Roster List -->
-              <div class="space-y-1.5">
+              <div class="space-y-2">
                 
-                <!-- CEO (Featured Anchor) -->
-                <div class="flex items-center gap-3.5 p-2.5 rounded-xl bg-white border border-berggruen-border/90 shadow-2xs group hover:border-berggruen-blue/60 transition-all">
-                  <div class="w-16 h-7 rounded-md bg-berggruen-darkblue text-white flex items-center justify-center text-[10px] font-mono font-bold tracking-wider shrink-0 shadow-2xs group-hover:bg-berggruen-blue transition-colors">
+                <!-- CEO -->
+                <div class="flex items-center gap-3 p-2.5 rounded-2xl bg-white border border-berggruen-border shadow-fine group hover:border-berggruen-blue hover:shadow-lift transition-all">
+                  <div class="w-14 h-8 rounded-lg bg-berggruen-forest text-white flex items-center justify-center text-[11px] font-mono font-bold tracking-wider shrink-0 shadow-xs group-hover:bg-berggruen-blue transition-colors">
                     CEO
                   </div>
                   <div class="min-w-0 flex-1">
                     <div class="text-[14px] font-bold text-berggruen-ink group-hover:text-berggruen-darkblue transition-colors leading-tight">Chengcheng Qin</div>
-                    <div class="text-[11px] text-slate-500 font-normal leading-tight mt-0.5">Chief Executive Officer</div>
+                    <div class="text-[11px] text-slate-500 font-normal leading-tight mt-0.5">Chief Executive Officer &bull; Governance &amp; Direction</div>
                   </div>
-                  <span class="hidden sm:inline-block text-[10px] font-mono text-berggruen-muted uppercase tracking-wider bg-berggruen-softmint px-2 py-0.5 rounded border border-berggruen-border/60">
-                    Executive
-                  </span>
                 </div>
 
                 <!-- Co-CFO -->
-                <div class="flex items-center gap-3.5 p-2 rounded-xl hover:bg-white border border-transparent hover:border-berggruen-border/80 hover:shadow-2xs transition-all group">
-                  <div class="w-16 h-7 rounded-md bg-berggruen-softmint border border-berggruen-border flex items-center justify-center text-[10px] font-mono font-bold text-berggruen-darkblue shrink-0 group-hover:bg-berggruen-blue group-hover:text-white group-hover:border-berggruen-blue transition-colors">
+                <div class="flex items-center gap-3 p-2.5 rounded-2xl bg-white/70 hover:bg-white border border-transparent hover:border-berggruen-border hover:shadow-fine transition-all group">
+                  <div class="w-14 h-8 rounded-lg bg-berggruen-softmint border border-berggruen-border flex items-center justify-center text-[10px] font-mono font-bold text-berggruen-darkblue shrink-0 group-hover:bg-berggruen-blue group-hover:text-white group-hover:border-berggruen-blue transition-colors">
                     Co-CFO
                   </div>
                   <div class="min-w-0 flex-1">
-                    <div class="text-[14px] font-bold text-berggruen-ink group-hover:text-berggruen-blue transition-colors leading-tight">Yuli Ma &amp; Xu Han</div>
-                    <div class="text-[11px] text-slate-500 font-normal leading-tight mt-0.5">Co-Chief Financial Officers</div>
+                    <div class="text-[14px] font-bold text-berggruen-ink group-hover:text-berggruen-darkblue transition-colors leading-tight">Yuli Ma &amp; Xu Han</div>
+                    <div class="text-[11px] text-slate-500 font-normal leading-tight mt-0.5">Co-Chief Financial Officers &bull; Finance &amp; Compliance</div>
                   </div>
                 </div>
 
                 <!-- COO -->
-                <div class="flex items-center gap-3.5 p-2 rounded-xl hover:bg-white border border-transparent hover:border-berggruen-border/80 hover:shadow-2xs transition-all group">
-                  <div class="w-16 h-7 rounded-md bg-berggruen-softmint border border-berggruen-border flex items-center justify-center text-[10px] font-mono font-bold text-berggruen-darkblue shrink-0 group-hover:bg-berggruen-blue group-hover:text-white group-hover:border-berggruen-blue transition-colors">
+                <div class="flex items-center gap-3 p-2.5 rounded-2xl bg-white/70 hover:bg-white border border-transparent hover:border-berggruen-border hover:shadow-fine transition-all group">
+                  <div class="w-14 h-8 rounded-lg bg-berggruen-softmint border border-berggruen-border flex items-center justify-center text-[10px] font-mono font-bold text-berggruen-darkblue shrink-0 group-hover:bg-berggruen-blue group-hover:text-white group-hover:border-berggruen-blue transition-colors">
                     COO
                   </div>
                   <div class="min-w-0 flex-1">
-                    <div class="text-[14px] font-bold text-berggruen-ink group-hover:text-berggruen-blue transition-colors leading-tight">Xinyu Li</div>
-                    <div class="text-[11px] text-slate-500 font-normal leading-tight mt-0.5">Chief Operating Officer</div>
+                    <div class="text-[14px] font-bold text-berggruen-ink group-hover:text-berggruen-darkblue transition-colors leading-tight">Xinyu Li</div>
+                    <div class="text-[11px] text-slate-500 font-normal leading-tight mt-0.5">Chief Operating Officer &bull; Operations &amp; Execution</div>
                   </div>
                 </div>
 
                 <!-- CCO -->
-                <div class="flex items-center gap-3.5 p-2 rounded-xl hover:bg-white border border-transparent hover:border-berggruen-border/80 hover:shadow-2xs transition-all group">
-                  <div class="w-16 h-7 rounded-md bg-berggruen-softmint border border-berggruen-border flex items-center justify-center text-[10px] font-mono font-bold text-berggruen-darkblue shrink-0 group-hover:bg-berggruen-blue group-hover:text-white group-hover:border-berggruen-blue transition-colors">
+                <div class="flex items-center gap-3 p-2.5 rounded-2xl bg-white/70 hover:bg-white border border-transparent hover:border-berggruen-border hover:shadow-fine transition-all group">
+                  <div class="w-14 h-8 rounded-lg bg-berggruen-softmint border border-berggruen-border flex items-center justify-center text-[10px] font-mono font-bold text-berggruen-darkblue shrink-0 group-hover:bg-berggruen-blue group-hover:text-white group-hover:border-berggruen-blue transition-colors">
                     CCO
                   </div>
                   <div class="min-w-0 flex-1">
-                    <div class="text-[14px] font-bold text-berggruen-ink group-hover:text-berggruen-blue transition-colors leading-tight">Nange Li</div>
-                    <div class="text-[11px] text-slate-500 font-normal leading-tight mt-0.5">Chief Culture Officer</div>
+                    <div class="text-[14px] font-bold text-berggruen-ink group-hover:text-berggruen-darkblue transition-colors leading-tight">Nange Li</div>
+                    <div class="text-[11px] text-slate-500 font-normal leading-tight mt-0.5">Chief Culture Officer &bull; Community &amp; Engagement</div>
                   </div>
                 </div>
 
                 <!-- CSO -->
-                <div class="flex items-center gap-3.5 p-2 rounded-xl hover:bg-white border border-transparent hover:border-berggruen-border/80 hover:shadow-2xs transition-all group">
-                  <div class="w-16 h-7 rounded-md bg-berggruen-softmint border border-berggruen-border flex items-center justify-center text-[10px] font-mono font-bold text-berggruen-darkblue shrink-0 group-hover:bg-berggruen-blue group-hover:text-white group-hover:border-berggruen-blue transition-colors">
+                <div class="flex items-center gap-3 p-2.5 rounded-2xl bg-white/70 hover:bg-white border border-transparent hover:border-berggruen-border hover:shadow-fine transition-all group">
+                  <div class="w-14 h-8 rounded-lg bg-berggruen-softmint border border-berggruen-border flex items-center justify-center text-[10px] font-mono font-bold text-berggruen-darkblue shrink-0 group-hover:bg-berggruen-blue group-hover:text-white group-hover:border-berggruen-blue transition-colors">
                     CSO
                   </div>
                   <div class="min-w-0 flex-1">
-                    <div class="text-[14px] font-bold text-berggruen-ink group-hover:text-berggruen-blue transition-colors leading-tight">Wenxin Mao</div>
-                    <div class="text-[11px] text-slate-500 font-normal leading-tight mt-0.5">Chief Security Officer</div>
+                    <div class="text-[14px] font-bold text-berggruen-ink group-hover:text-berggruen-darkblue transition-colors leading-tight">Wenxin Mao</div>
+                    <div class="text-[11px] text-slate-500 font-normal leading-tight mt-0.5">Chief Security Officer &bull; Risk &amp; Policy</div>
                   </div>
                 </div>
 
                 <!-- CBO -->
-                <div class="flex items-center gap-3.5 p-2 rounded-xl hover:bg-white border border-transparent hover:border-berggruen-border/80 hover:shadow-2xs transition-all group">
-                  <div class="w-16 h-7 rounded-md bg-berggruen-softmint border border-berggruen-border flex items-center justify-center text-[10px] font-mono font-bold text-berggruen-darkblue shrink-0 group-hover:bg-berggruen-blue group-hover:text-white group-hover:border-berggruen-blue transition-colors">
+                <div class="flex items-center gap-3 p-2.5 rounded-2xl bg-white/70 hover:bg-white border border-transparent hover:border-berggruen-border hover:shadow-fine transition-all group">
+                  <div class="w-14 h-8 rounded-lg bg-berggruen-softmint border border-berggruen-border flex items-center justify-center text-[10px] font-mono font-bold text-berggruen-darkblue shrink-0 group-hover:bg-berggruen-blue group-hover:text-white group-hover:border-berggruen-blue transition-colors">
                     CBO
                   </div>
                   <div class="min-w-0 flex-1">
-                    <div class="text-[14px] font-bold text-berggruen-ink group-hover:text-berggruen-blue transition-colors leading-tight">Fan Zhang</div>
-                    <div class="text-[11px] text-slate-500 font-normal leading-tight mt-0.5">Chief Brand Officer</div>
+                    <div class="text-[14px] font-bold text-berggruen-ink group-hover:text-berggruen-darkblue transition-colors leading-tight">Fan Zhang</div>
+                    <div class="text-[11px] text-slate-500 font-normal leading-tight mt-0.5">Chief Brand Officer &bull; Brand &amp; External Alliances</div>
                   </div>
                 </div>
 
                 <!-- CPO -->
-                <div class="flex items-center gap-3.5 p-2 rounded-xl hover:bg-white border border-transparent hover:border-berggruen-border/80 hover:shadow-2xs transition-all group">
-                  <div class="w-16 h-7 rounded-md bg-berggruen-softmint border border-berggruen-border flex items-center justify-center text-[10px] font-mono font-bold text-berggruen-darkblue shrink-0 group-hover:bg-berggruen-blue group-hover:text-white group-hover:border-berggruen-blue transition-colors">
+                <div class="flex items-center gap-3 p-2.5 rounded-2xl bg-white/70 hover:bg-white border border-transparent hover:border-berggruen-border hover:shadow-fine transition-all group">
+                  <div class="w-14 h-8 rounded-lg bg-berggruen-softmint border border-berggruen-border flex items-center justify-center text-[10px] font-mono font-bold text-berggruen-darkblue shrink-0 group-hover:bg-berggruen-blue group-hover:text-white group-hover:border-berggruen-blue transition-colors">
                     CPO
                   </div>
                   <div class="min-w-0 flex-1">
-                    <div class="text-[14px] font-bold text-berggruen-ink group-hover:text-berggruen-blue transition-colors leading-tight">Jinghan Xu</div>
-                    <div class="text-[11px] text-slate-500 font-normal leading-tight mt-0.5">Chief Program Officer</div>
+                    <div class="text-[14px] font-bold text-berggruen-ink group-hover:text-berggruen-darkblue transition-colors leading-tight">Jinghan Xu</div>
+                    <div class="text-[11px] text-slate-500 font-normal leading-tight mt-0.5">Chief Program Officer &bull; Curriculum &amp; Content</div>
                   </div>
                 </div>
 
@@ -310,8 +686,8 @@
             </div>
 
             <!-- Footer matching Left Card -->
-            <div class="pt-5 mt-6 border-t border-berggruen-border/80 flex items-center justify-between text-xs text-berggruen-muted font-mono">
-              <span>BPAUS Executive Officers</span>
+            <div class="pt-5 mt-6 border-t border-berggruen-border flex items-center justify-between text-xs text-berggruen-muted font-mono">
+              <span>BPAUS Board of Officers</span>
               <span>New York, NY</span>
             </div>
           </div>
@@ -322,42 +698,65 @@
     </section>
 
     <!-- ========================================== -->
-    <!-- 2. OUR PROGRAMS (Minimalist Cards)         -->
+    <!-- 2. OUR PROGRAMS & EXPANDING ECOSYSTEM      -->
     <!-- ========================================== -->
-    <section id="programs" class="py-24 bg-[#FAF9F5] border-b border-berggruen-border">
+    <section id="programs" class="py-24 bg-[#FAF9F6] border-b border-berggruen-border">
       <div class="max-w-6xl mx-auto px-6 lg:px-8">
         
-        <div class="max-w-3xl mb-16">
-          <div class="text-xs font-mono font-bold uppercase tracking-widest text-berggruen-blue mb-2">02 / Our Programs</div>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-berggruen-ink tracking-tight">Core Program Pillars</h2>
-          <p class="text-sm text-berggruen-muted mt-2 font-light leading-relaxed">
-            Standardized educational, executive, and philanthropic initiatives. Click any program below to view its full charter and pillars.
-          </p>
+        <div class="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-berggruen-darkblue mb-2.5">
+          <span class="w-1.5 h-1.5 rounded-full bg-berggruen-blue"></span>
+          <span>02 / Program Ecosystem</span>
+        </div>
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+          <div class="max-w-2xl">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-berggruen-ink tracking-tight">Foundational Pillars &amp; Expanding Horizons</h2>
+            <p class="text-sm sm:text-base text-berggruen-muted mt-2 font-light leading-relaxed">
+              Anchored by three established core pillars, Boya Professional Alliance is actively incubating interdisciplinary initiatives across venture, culture, and social equity in North America.
+            </p>
+          </div>
+          
+          <!-- Domain Status Roadmap Pills -->
+          <div class="flex flex-wrap items-center gap-2 text-[11px] font-mono shrink-0">
+            <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200/80 font-medium flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              3 Active Pillars
+            </span>
+            <span class="px-3 py-1 rounded-full bg-white text-berggruen-darkblue border border-dashed border-berggruen-blue/60 font-medium flex items-center gap-1.5 shadow-fine">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+              Pillar 04+ In Incubation
+            </span>
+          </div>
         </div>
 
         <!-- 3-Column Minimalist Grid with Retained Photography -->
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
           
           <!-- Pillar 1: Boya Roundtable Series -->
-          <div onclick="openProgramModal('roundtable')" class="bg-white rounded-2xl border border-berggruen-border overflow-hidden hover:border-berggruen-blue hover:shadow-md transition-all group shadow-xs flex flex-col justify-between cursor-pointer">
+          <div onclick="openProgramModal('roundtable')" class="bg-white rounded-3xl border border-berggruen-border overflow-hidden hover:border-berggruen-blue hover:shadow-lift transition-all group shadow-fine flex flex-col justify-between cursor-pointer">
             <div class="p-6 sm:p-7">
-              <h3 class="text-xl font-extrabold text-berggruen-ink tracking-tight group-hover:text-berggruen-blue transition-colors">
+              <div class="flex items-center justify-between text-xs font-mono mb-3">
+                <span class="font-bold text-berggruen-darkblue uppercase tracking-wider">Pillar 01</span>
+                <span class="text-berggruen-muted">Executive Forum</span>
+              </div>
+
+              <h3 class="text-xl font-extrabold text-berggruen-ink tracking-tight group-hover:text-berggruen-darkblue transition-colors leading-snug">
                 Boya Roundtable Series
               </h3>
-              <p class="text-xs font-semibold text-berggruen-blue mt-1 mb-3">
+              <p class="text-xs font-semibold text-berggruen-darkblue mt-1.5 mb-4">
                 Closed-Door Strategic Inquiry &amp; Industry Frontiers
               </p>
               
               <div class="flex flex-wrap gap-1.5 mb-5">
-                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">Executive Forum</span>
-                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">Chatham House Rule</span>
-                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">By Invitation</span>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-medium bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">Executive Forum</span>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-medium bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">Curated Dialogue</span>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-medium bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">By Invitation</span>
               </div>
 
-              <!-- Retained Photo -->
-              <div class="h-56 rounded-xl overflow-hidden relative border border-slate-100">
+              <!-- Retained Photo (Unified 16:10 Ratio) -->
+              <div class="w-full aspect-[16/10] rounded-2xl overflow-hidden relative border border-slate-100 shadow-fine">
                 <img src="assets/roundtable-session-1.jpg" alt="Boya Roundtable Series Assembly" class="w-full h-full object-cover img-zoom">
-                <div class="absolute bottom-2.5 left-2.5 bg-[#FAF9F5]/90 backdrop-blur-xs px-2.5 py-1 rounded text-[10px] font-mono font-semibold text-berggruen-ink border border-berggruen-border">
+                <div class="absolute bottom-2.5 left-2.5 bg-[#FAF9F6]/90 backdrop-blur-xs px-2.5 py-1 rounded-md text-[10px] font-mono font-semibold text-berggruen-ink border border-berggruen-border">
                   Curated 20–30 Seats
                 </div>
               </div>
@@ -365,32 +764,38 @@
 
             <!-- Click Trigger CTA -->
             <div class="px-6 pb-6 sm:px-7 sm:pb-7 pt-0 mt-auto">
-              <button type="button" class="w-full py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-berggruen-blue text-[#152E28] group-hover:bg-berggruen-darkblue group-hover:text-white transition-all shadow-xs flex items-center justify-center gap-1.5">
-                <span>View Overview &amp; Pillars</span> &rarr;
+              <button type="button" class="w-full py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-berggruen-blue text-[#112420] group-hover:bg-berggruen-darkblue group-hover:text-white transition-all shadow-fine flex items-center justify-center gap-2">
+                <span>View Overview &amp; Pillars</span>
+                <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
               </button>
             </div>
           </div>
 
           <!-- Pillar 2: Boya Career Accelerator Workshops -->
-          <div onclick="openProgramModal('accelerator')" class="bg-white rounded-2xl border border-berggruen-border overflow-hidden hover:border-berggruen-blue hover:shadow-md transition-all group shadow-xs flex flex-col justify-between cursor-pointer">
+          <div onclick="openProgramModal('accelerator')" class="bg-white rounded-3xl border border-berggruen-border overflow-hidden hover:border-berggruen-blue hover:shadow-lift transition-all group shadow-fine flex flex-col justify-between cursor-pointer">
             <div class="p-6 sm:p-7">
-              <h3 class="text-xl font-extrabold text-berggruen-ink tracking-tight group-hover:text-berggruen-blue transition-colors">
+              <div class="flex items-center justify-between text-xs font-mono mb-3">
+                <span class="font-bold text-berggruen-darkblue uppercase tracking-wider">Pillar 02</span>
+                <span class="text-berggruen-muted">Leadership Labs</span>
+              </div>
+
+              <h3 class="text-xl font-extrabold text-berggruen-ink tracking-tight group-hover:text-berggruen-darkblue transition-colors leading-snug">
                 Boya Career Accelerator Workshops
               </h3>
-              <p class="text-xs font-semibold text-berggruen-blue mt-1 mb-3">
+              <p class="text-xs font-semibold text-berggruen-darkblue mt-1.5 mb-4">
                 Soft-Power Mastery, Executive Presence &amp; Upward Influence
               </p>
               
               <div class="flex flex-wrap gap-1.5 mb-5">
-                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">Professional Development</span>
-                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">Leadership Labs</span>
-                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">Cohort-Based</span>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-medium bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">Professional Development</span>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-medium bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">Leadership Labs</span>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-medium bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">Cohort-Based</span>
               </div>
 
-              <!-- Real Workshop Photo (Cohort Group) -->
-              <div class="h-56 rounded-xl overflow-hidden relative border border-slate-100">
+              <!-- Retained Photo (Unified 16:10 Ratio) -->
+              <div class="w-full aspect-[16/10] rounded-2xl overflow-hidden relative border border-slate-100 shadow-fine">
                 <img src="assets/accelerator-workshop-group.jpg" alt="Boya Career Accelerator Workshop Cohort Group Assembly" class="w-full h-full object-cover img-zoom">
-                <div class="absolute bottom-2.5 left-2.5 bg-[#FAF9F5]/90 backdrop-blur-xs px-2.5 py-1 rounded text-[10px] font-mono font-semibold text-berggruen-ink border border-berggruen-border">
+                <div class="absolute bottom-2.5 left-2.5 bg-[#FAF9F6]/90 backdrop-blur-xs px-2.5 py-1 rounded-md text-[10px] font-mono font-semibold text-berggruen-ink border border-berggruen-border">
                   Tribeca Cohort Assembly
                 </div>
               </div>
@@ -398,32 +803,38 @@
 
             <!-- Click Trigger CTA -->
             <div class="px-6 pb-6 sm:px-7 sm:pb-7 pt-0 mt-auto">
-              <button type="button" class="w-full py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-berggruen-blue text-[#152E28] group-hover:bg-berggruen-darkblue group-hover:text-white transition-all shadow-xs flex items-center justify-center gap-1.5">
-                <span>View Overview &amp; Pillars</span> &rarr;
+              <button type="button" class="w-full py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-berggruen-blue text-[#112420] group-hover:bg-berggruen-darkblue group-hover:text-white transition-all shadow-fine flex items-center justify-center gap-2">
+                <span>View Overview &amp; Pillars</span>
+                <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
               </button>
             </div>
           </div>
 
           <!-- Pillar 3: Boya Sports Clinics & Fundamentals -->
-          <div onclick="openProgramModal('clinics')" class="bg-white rounded-2xl border border-berggruen-border overflow-hidden hover:border-berggruen-blue hover:shadow-md transition-all group shadow-xs flex flex-col justify-between cursor-pointer">
+          <div onclick="openProgramModal('clinics')" class="bg-white rounded-3xl border border-berggruen-border overflow-hidden hover:border-berggruen-blue hover:shadow-lift transition-all group shadow-fine flex flex-col justify-between cursor-pointer">
             <div class="p-6 sm:p-7">
-              <h3 class="text-xl font-extrabold text-berggruen-ink tracking-tight group-hover:text-berggruen-blue transition-colors">
+              <div class="flex items-center justify-between text-xs font-mono mb-3">
+                <span class="font-bold text-berggruen-darkblue uppercase tracking-wider">Pillar 03</span>
+                <span class="text-berggruen-muted">Sports &amp; Community</span>
+              </div>
+
+              <h3 class="text-xl font-extrabold text-berggruen-ink tracking-tight group-hover:text-berggruen-darkblue transition-colors leading-snug">
                 Boya Sports Clinics &amp; Fundamentals
               </h3>
-              <p class="text-xs font-semibold text-berggruen-blue mt-1 mb-3">
+              <p class="text-xs font-semibold text-berggruen-darkblue mt-1.5 mb-4">
                 Athletic Literacy, Community Equity &amp; Lifelong Wellness
               </p>
               
               <div class="flex flex-wrap gap-1.5 mb-5">
-                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">Philanthropy</span>
-                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">501(c)(3) Subsidized</span>
-                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">Sports &amp; Community</span>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-medium bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">Philanthropy</span>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-medium bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">501(c)(3) Subsidized</span>
+                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-medium bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">Lifetime Sports</span>
               </div>
 
-              <!-- Real Clinic Photo -->
-              <div class="h-56 rounded-xl overflow-hidden relative border border-slate-100">
+              <!-- Retained Photo (Unified 16:10 Ratio) -->
+              <div class="w-full aspect-[16/10] rounded-2xl overflow-hidden relative border border-slate-100 shadow-fine">
                 <img src="assets/tennis-clinic-group.jpg" alt="2nd Boya Tennis Fundamentals and Clinics in Edgewater, NJ" class="w-full h-full object-cover img-zoom">
-                <div class="absolute bottom-2.5 left-2.5 bg-[#FAF9F5]/90 backdrop-blur-xs px-2.5 py-1 rounded text-[10px] font-mono font-semibold text-berggruen-ink border border-berggruen-border">
+                <div class="absolute bottom-2.5 left-2.5 bg-[#FAF9F6]/90 backdrop-blur-xs px-2.5 py-1 rounded-md text-[10px] font-mono font-semibold text-berggruen-ink border border-berggruen-border">
                   Edgewater Clinic &bull; 70+ Attendees
                 </div>
               </div>
@@ -431,57 +842,130 @@
 
             <!-- Click Trigger CTA -->
             <div class="px-6 pb-6 sm:px-7 sm:pb-7 pt-0 mt-auto">
-              <button type="button" class="w-full py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-berggruen-blue text-[#152E28] group-hover:bg-berggruen-darkblue group-hover:text-white transition-all shadow-xs flex items-center justify-center gap-1.5">
-                <span>View Overview &amp; Pillars</span> &rarr;
+              <button type="button" class="w-full py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-berggruen-blue text-[#112420] group-hover:bg-berggruen-darkblue group-hover:text-white transition-all shadow-fine flex items-center justify-center gap-2">
+                <span>View Overview &amp; Pillars</span>
+                <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
               </button>
             </div>
           </div>
 
         </div>
 
+        <!-- Pillar 04+ Expanding Horizons & Incubation Card -->
+        <div class="mt-8 bg-gradient-to-br from-white via-[#FAF9F6] to-[#EEF7F4] rounded-3xl border-2 border-dashed border-berggruen-blue/35 p-7 sm:p-9 shadow-fine hover:shadow-lift transition-all relative overflow-hidden group">
+          <div class="absolute -right-12 -bottom-12 w-48 h-48 rounded-full bg-berggruen-lightmint/20 pointer-events-none blur-2xl"></div>
+          
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center relative z-10">
+            
+            <div class="lg:col-span-8 space-y-3">
+              <div class="flex flex-wrap items-center gap-2 text-xs font-mono">
+                <span class="font-bold text-berggruen-darkblue uppercase tracking-wider bg-white px-2.5 py-0.5 rounded-md border border-berggruen-border">Pillar 04+</span>
+                <span class="text-emerald-800 bg-berggruen-softmint px-2.5 py-0.5 rounded-md border border-berggruen-border font-medium flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                  In Incubation &bull; Horizon Roadmap
+                </span>
+                <span class="text-berggruen-muted">Community Co-Creation</span>
+              </div>
+
+              <h3 class="text-xl sm:text-2xl font-extrabold text-berggruen-ink tracking-tight">
+                Emerging Initiatives &amp; Frontier Labs
+              </h3>
+
+              <p class="text-sm text-slate-700 leading-relaxed font-normal max-w-3xl">
+                As Boya Professional Alliance scales, upcoming pillars in <strong class="text-berggruen-ink font-semibold">Arts &amp; Humanities</strong>, <strong class="text-berggruen-ink font-semibold">Venture &amp; Founder Stewardship</strong>, and <strong class="text-berggruen-ink font-semibold">Cross-Border Research Fellowships</strong> are being actively developed with our advisory fellows and institutional partners.
+              </p>
+
+              <div class="flex flex-wrap gap-2 pt-1">
+                <span class="px-3 py-1 rounded-full text-[11px] font-mono bg-white text-slate-700 border border-slate-200/80 shadow-2xs">
+                  ✦ Arts, Culture &amp; Intellectual Heritage
+                </span>
+                <span class="px-3 py-1 rounded-full text-[11px] font-mono bg-white text-slate-700 border border-slate-200/80 shadow-2xs">
+                  ✦ Venture &amp; Tech Stewardship Lab
+                </span>
+                <span class="px-3 py-1 rounded-full text-[11px] font-mono bg-white text-slate-700 border border-slate-200/80 shadow-2xs">
+                  ✦ Interdisciplinary Scholar Fellowship
+                </span>
+              </div>
+            </div>
+
+            <!-- Right CTA column -->
+            <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col justify-center items-start lg:items-end gap-3 shrink-0 pt-2 lg:pt-0">
+              <button type="button" onclick="prefillProgram('Boya Alliance: Propose an Initiative / New Pillar Lead')" class="w-full sm:w-auto px-6 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider bg-berggruen-forest hover:bg-berggruen-darkblue text-white transition-all shadow-fine hover:shadow-lift flex items-center justify-center gap-2 group-hover:bg-berggruen-darkblue">
+                <span>Propose an Initiative</span>
+                <span>&rarr;</span>
+              </button>
+              <span class="text-[11px] text-berggruen-muted font-mono text-left lg:text-right">
+                Join as a Pillar Lead or Co-Organizer
+              </span>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </section>
 
     <!-- ========================================== -->
-    <!-- 3. PAST EVENTS (With Photos)               -->
+    <!-- 3. PAST EVENTS (With Category Filtering)   -->
     <!-- ========================================== -->
     <section id="events" class="py-24 bg-white border-b border-berggruen-border">
       <div class="max-w-6xl mx-auto px-6 lg:px-8">
         
-        <div class="max-w-2xl mb-14">
-          <div class="text-xs font-mono font-bold uppercase tracking-widest text-berggruen-blue mb-2">03 / Past Events</div>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-berggruen-ink tracking-tight">Recent Gatherings & Symposia</h2>
-          <p class="text-sm text-berggruen-muted mt-2 font-light">
-            Highlights and proceedings from recent BPAUS colloquia and community tournaments.
-          </p>
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div class="max-w-2xl">
+            <div class="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-berggruen-darkblue mb-2.5">
+              <span class="w-1.5 h-1.5 rounded-full bg-berggruen-blue"></span>
+              <span>03 / Past Events</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-berggruen-ink tracking-tight">Recent Gatherings &amp; Symposia</h2>
+            <p class="text-sm sm:text-base text-berggruen-muted mt-2 font-light">
+              Highlights and official proceedings from recent BPAUS colloquia, executive workshops, and athletic clinics.
+            </p>
+          </div>
+
+          <!-- Category Filter Pills -->
+          <div class="flex flex-wrap items-center gap-2 text-xs font-mono shrink-0">
+            <button type="button" onclick="filterEvents('all')" class="event-filter-btn px-3.5 py-1.5 rounded-full border border-berggruen-darkblue bg-berggruen-darkblue text-white transition-all font-semibold" data-filter="all">
+              All (4)
+            </button>
+            <button type="button" onclick="filterEvents('roundtable')" class="event-filter-btn px-3.5 py-1.5 rounded-full border border-berggruen-border bg-[#FAF9F6] text-slate-700 hover:border-berggruen-blue transition-all" data-filter="roundtable">
+              Roundtables
+            </button>
+            <button type="button" onclick="filterEvents('career')" class="event-filter-btn px-3.5 py-1.5 rounded-full border border-berggruen-border bg-[#FAF9F6] text-slate-700 hover:border-berggruen-blue transition-all" data-filter="career">
+              Career Labs
+            </button>
+            <button type="button" onclick="filterEvents('sports')" class="event-filter-btn px-3.5 py-1.5 rounded-full border border-berggruen-border bg-[#FAF9F6] text-slate-700 hover:border-berggruen-blue transition-all" data-filter="sports">
+              Sports Clinics
+            </button>
+            <button type="button" onclick="filterEvents('social')" class="event-filter-btn px-3.5 py-1.5 rounded-full border border-berggruen-border bg-[#FAF9F6] text-slate-700 hover:border-berggruen-blue transition-all" data-filter="social">
+              Mixers &amp; Social
+            </button>
+          </div>
         </div>
 
-        <div class="space-y-8">
+        <div id="eventsList" class="space-y-8">
           
-          <!-- Event (BOYA & Work On Your Hobby Music & Cocktail Social Recap) -->
-          <div class="bg-white border border-berggruen-border rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 hover:border-berggruen-blue hover:shadow-xs transition-all group">
+          <!-- Event: Flatiron Social -->
+          <div class="event-card bg-white border border-berggruen-border rounded-3xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 hover:border-berggruen-blue hover:shadow-lift transition-all group shadow-fine" data-category="social">
             
-            <!-- Left: Event Photo -->
-            <div class="lg:col-span-5 p-4 bg-[#FAF9F5] border-b lg:border-b-0 lg:border-r border-berggruen-border flex flex-col justify-center">
-              <div class="w-full aspect-[16/10] rounded-xl overflow-hidden relative border border-berggruen-border bg-white shadow-2xs">
+            <!-- Left: Event Photo (Unified 16:10 Ratio) -->
+            <div class="lg:col-span-5 p-4 sm:p-5 bg-[#FAF9F6] border-b lg:border-b-0 lg:border-r border-berggruen-border flex flex-col justify-center">
+              <div class="w-full aspect-[16/10] rounded-2xl overflow-hidden relative border border-berggruen-border bg-white shadow-fine">
                 <img src="assets/music-cocktail-social-flatiron.jpg" alt="Members of the BOYA executive team at the Flatiron social" class="w-full h-full object-cover img-zoom">
-                <div class="absolute bottom-2.5 left-2.5 bg-[#FAF9F5]/90 backdrop-blur-xs px-2.5 py-1 rounded text-[10px] font-mono font-semibold text-berggruen-ink border border-berggruen-border">
+                <div class="absolute bottom-2.5 left-2.5 bg-[#FAF9F6]/90 backdrop-blur-xs px-2.5 py-1 rounded-md text-[10px] font-mono font-semibold text-berggruen-ink border border-berggruen-border">
                   Flatiron, NYC &bull; Nov 13, 2026
                 </div>
               </div>
-              <p class="text-[11px] text-berggruen-muted mt-2.5 text-center font-mono">
-                <span class="font-semibold text-berggruen-ink">Photo Caption:</span> Members of the BOYA executive team at the Flatiron social.
-              </p>
             </div>
 
             <!-- Right: Event Recap Copy -->
             <div class="lg:col-span-7 p-7 sm:p-9 flex flex-col justify-between space-y-4">
               <div>
-                <div class="flex flex-wrap items-center gap-2 text-xs font-mono text-berggruen-blue uppercase font-bold mb-2">
-                  <span>Nov 13, 2026</span> &bull; <span>Flatiron, Manhattan, New York</span> &bull; <span class="px-2 py-0.5 rounded text-[10px] bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">Community Social &amp; Networking</span>
+                <div class="flex flex-wrap items-center gap-2 text-xs font-mono text-berggruen-darkblue uppercase font-bold mb-2.5">
+                  <span>Nov 13, 2026</span> &bull; <span>Flatiron, Manhattan, NY</span> &bull; <span class="px-2.5 py-0.5 rounded-full text-[10px] bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">Community Social &amp; Networking</span>
                 </div>
 
-                <h3 class="text-xl sm:text-2xl font-extrabold text-berggruen-ink group-hover:text-berggruen-blue transition-colors tracking-tight leading-snug">
+                <h3 class="text-xl sm:text-2xl font-extrabold text-berggruen-ink group-hover:text-berggruen-darkblue transition-colors tracking-tight leading-snug">
                   BOYA and Work On Your Hobby Co-Host Music &amp; Cocktail Social in Flatiron
                 </h3>
 
@@ -496,20 +980,20 @@
 
               <div class="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs">
                 <span class="text-berggruen-muted font-mono text-[11px]">~100 Attendees &bull; Co-Hosted with Work On Your Hobby</span>
-                <span class="font-semibold text-berggruen-blue text-xs">Community Social &amp; Mixer</span>
+                <span class="font-semibold text-berggruen-darkblue text-xs">Community Social &amp; Mixer</span>
               </div>
             </div>
 
           </div>
 
-          <!-- Event 1 (BOYA Roundtable Sessions 1 & 2 Recap) -->
-          <div class="bg-white border border-berggruen-border rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 hover:border-berggruen-blue hover:shadow-xs transition-all group">
+          <!-- Event: Roundtable Sessions 1 & 2 -->
+          <div class="event-card bg-white border border-berggruen-border rounded-3xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 hover:border-berggruen-blue hover:shadow-lift transition-all group shadow-fine" data-category="roundtable">
             
-            <!-- Left: Event Photo -->
-            <div class="lg:col-span-5 p-4 bg-[#FAF9F5] border-b lg:border-b-0 lg:border-r border-berggruen-border flex items-center">
-              <div class="w-full h-64 sm:h-72 lg:h-full rounded-xl overflow-hidden relative border border-berggruen-border bg-white shadow-2xs min-h-[220px]">
+            <!-- Left: Event Photo (Unified 16:10 Ratio) -->
+            <div class="lg:col-span-5 p-4 sm:p-5 bg-[#FAF9F6] border-b lg:border-b-0 lg:border-r border-berggruen-border flex flex-col justify-center">
+              <div class="w-full aspect-[16/10] rounded-2xl overflow-hidden relative border border-berggruen-border bg-white shadow-fine">
                 <img src="assets/roundtable-session-2.jpg" alt="BOYA Roundtable Session Assembly" class="w-full h-full object-cover img-zoom">
-                <div class="absolute bottom-2.5 left-2.5 bg-[#FAF9F5]/90 backdrop-blur-xs px-2.5 py-1 rounded text-[10px] font-mono font-semibold text-berggruen-ink border border-berggruen-border">
+                <div class="absolute bottom-2.5 left-2.5 bg-[#FAF9F6]/90 backdrop-blur-xs px-2.5 py-1 rounded-md text-[10px] font-mono font-semibold text-berggruen-ink border border-berggruen-border">
                   Session 1 &bull; Nov 6, 2026
                 </div>
               </div>
@@ -518,11 +1002,11 @@
             <!-- Right: Event Recap Copy -->
             <div class="lg:col-span-7 p-7 sm:p-9 flex flex-col justify-between space-y-4">
               <div>
-                <div class="flex flex-wrap items-center gap-2 text-xs font-mono text-berggruen-blue uppercase font-bold mb-2">
-                  <span>Nov 6 &amp; Nov 12, 2026</span> &bull; <span>Midtown Manhattan, New York</span> &bull; <span class="px-2 py-0.5 rounded text-[10px] bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">Boya Roundtable Series</span>
+                <div class="flex flex-wrap items-center gap-2 text-xs font-mono text-berggruen-darkblue uppercase font-bold mb-2.5">
+                  <span>Nov 6 &amp; Nov 12, 2026</span> &bull; <span>Midtown Manhattan, NY</span> &bull; <span class="px-2.5 py-0.5 rounded-full text-[10px] bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">Boya Roundtable Series</span>
                 </div>
 
-                <h3 class="text-xl sm:text-2xl font-extrabold text-berggruen-ink group-hover:text-berggruen-blue transition-colors tracking-tight leading-snug">
+                <h3 class="text-xl sm:text-2xl font-extrabold text-berggruen-ink group-hover:text-berggruen-darkblue transition-colors tracking-tight leading-snug">
                   BOYA Roundtable (Sessions 1 &amp; 2): Navigating Quantitative Finance in the AI Era
                 </h3>
 
@@ -532,21 +1016,21 @@
               </div>
 
               <div class="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs">
-                <span class="text-berggruen-muted font-mono text-[11px]">70+ Buy-Side &amp; Tech Leaders &bull; Chatham House Standard</span>
-                <span class="font-semibold text-berggruen-blue text-xs">Closed-Door Session Proceedings</span>
+                <span class="text-berggruen-muted font-mono text-[11px]">70+ Buy-Side &amp; Tech Leaders &bull; Strategic &amp; Candid Dialogue</span>
+                <span class="font-semibold text-berggruen-darkblue text-xs">Closed-Door Session Proceedings</span>
               </div>
             </div>
 
           </div>
 
-          <!-- Event 2 (BOYA Career Accelerator Workshops Recap) -->
-          <div class="bg-white border border-berggruen-border rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 hover:border-berggruen-blue hover:shadow-xs transition-all group">
+          <!-- Event: Career Accelerator Issue 2 -->
+          <div class="event-card bg-white border border-berggruen-border rounded-3xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 hover:border-berggruen-blue hover:shadow-lift transition-all group shadow-fine" data-category="career">
             
-            <!-- Left: Workshop Photo -->
-            <div class="lg:col-span-5 p-4 bg-[#FAF9F5] border-b lg:border-b-0 lg:border-r border-berggruen-border flex items-center">
-              <div class="w-full h-64 sm:h-72 lg:h-full rounded-xl overflow-hidden relative border border-berggruen-border bg-white shadow-2xs min-h-[220px]">
+            <!-- Left: Workshop Photo (Unified 16:10 Ratio) -->
+            <div class="lg:col-span-5 p-4 sm:p-5 bg-[#FAF9F6] border-b lg:border-b-0 lg:border-r border-berggruen-border flex flex-col justify-center">
+              <div class="w-full aspect-[16/10] rounded-2xl overflow-hidden relative border border-berggruen-border bg-white shadow-fine">
                 <img src="assets/accelerator-workshop-presentation.jpg" alt="BOYA Career Accelerator Workshop Presentation by Weihua Li" class="w-full h-full object-cover img-zoom">
-                <div class="absolute bottom-2.5 left-2.5 bg-[#FAF9F5]/90 backdrop-blur-xs px-2.5 py-1 rounded text-[10px] font-mono font-semibold text-berggruen-ink border border-berggruen-border">
+                <div class="absolute bottom-2.5 left-2.5 bg-[#FAF9F6]/90 backdrop-blur-xs px-2.5 py-1 rounded-md text-[10px] font-mono font-semibold text-berggruen-ink border border-berggruen-border">
                   Interactive Lab &bull; Oct 23, 2026
                 </div>
               </div>
@@ -555,11 +1039,11 @@
             <!-- Right: Event Recap Copy -->
             <div class="lg:col-span-7 p-7 sm:p-9 flex flex-col justify-between space-y-4">
               <div>
-                <div class="flex flex-wrap items-center gap-2 text-xs font-mono text-berggruen-blue uppercase font-bold mb-2">
-                  <span>Oct 23, 2026</span> &bull; <span>Tribeca, Manhattan, New York</span> &bull; <span class="px-2 py-0.5 rounded text-[10px] bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">Boya Career Accelerator Workshops</span>
+                <div class="flex flex-wrap items-center gap-2 text-xs font-mono text-berggruen-darkblue uppercase font-bold mb-2.5">
+                  <span>Oct 23, 2026</span> &bull; <span>Tribeca, Manhattan, NY</span> &bull; <span class="px-2.5 py-0.5 rounded-full text-[10px] bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">Career Accelerator</span>
                 </div>
 
-                <h3 class="text-xl sm:text-2xl font-extrabold text-berggruen-ink group-hover:text-berggruen-blue transition-colors tracking-tight leading-snug">
+                <h3 class="text-xl sm:text-2xl font-extrabold text-berggruen-ink group-hover:text-berggruen-darkblue transition-colors tracking-tight leading-snug">
                   BOYA Career Accelerator Workshops (Issue 2): Making Your Capabilities Visible &amp; Rewarded
                 </h3>
 
@@ -570,20 +1054,20 @@
 
               <div class="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs">
                 <span class="text-berggruen-muted font-mono text-[11px]">Guest Speaker: Weihua Li &bull; Creative Space Sponsored by FocusAlpha AI</span>
-                <span class="font-semibold text-berggruen-blue text-xs">Co-organized with 下班别走</span>
+                <span class="font-semibold text-berggruen-darkblue text-xs">Co-organized with 下班别走</span>
               </div>
             </div>
 
           </div>
 
-          <!-- Event 3 (2nd Boya Tennis Fundamentals and Clinics Recap) -->
-          <div class="bg-white border border-berggruen-border rounded-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 hover:border-berggruen-blue hover:shadow-xs transition-all group">
+          <!-- Event: 2nd Tennis Clinics -->
+          <div class="event-card bg-white border border-berggruen-border rounded-3xl overflow-hidden grid grid-cols-1 lg:grid-cols-12 hover:border-berggruen-blue hover:shadow-lift transition-all group shadow-fine" data-category="sports">
             
-            <!-- Left: Tennis Clinic Photo -->
-            <div class="lg:col-span-5 p-4 bg-[#FAF9F5] border-b lg:border-b-0 lg:border-r border-berggruen-border flex items-center">
-              <div class="w-full h-64 sm:h-72 lg:h-full rounded-xl overflow-hidden relative border border-berggruen-border bg-white shadow-2xs min-h-[220px]">
+            <!-- Left: Tennis Clinic Photo (Unified 16:10 Ratio) -->
+            <div class="lg:col-span-5 p-4 sm:p-5 bg-[#FAF9F6] border-b lg:border-b-0 lg:border-r border-berggruen-border flex flex-col justify-center">
+              <div class="w-full aspect-[16/10] rounded-2xl overflow-hidden relative border border-berggruen-border bg-white shadow-fine">
                 <img src="assets/tennis-clinic-group.jpg" alt="2nd Boya Tennis Fundamentals and Clinics in Edgewater, NJ" class="w-full h-full object-cover img-zoom">
-                <div class="absolute bottom-2.5 left-2.5 bg-[#FAF9F5]/90 backdrop-blur-xs px-2.5 py-1 rounded text-[10px] font-mono font-semibold text-berggruen-ink border border-berggruen-border">
+                <div class="absolute bottom-2.5 left-2.5 bg-[#FAF9F6]/90 backdrop-blur-xs px-2.5 py-1 rounded-md text-[10px] font-mono font-semibold text-berggruen-ink border border-berggruen-border">
                   Edgewater, NJ &bull; Aug 30, 2026
                 </div>
               </div>
@@ -592,11 +1076,11 @@
             <!-- Right: Event Recap Copy -->
             <div class="lg:col-span-7 p-7 sm:p-9 flex flex-col justify-between space-y-4">
               <div>
-                <div class="flex flex-wrap items-center gap-2 text-xs font-mono text-berggruen-blue uppercase font-bold mb-2">
-                  <span>Aug 30, 2026</span> &bull; <span>Edgewater, New Jersey</span> &bull; <span class="px-2 py-0.5 rounded text-[10px] bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">Boya Sports Clinics</span>
+                <div class="flex flex-wrap items-center gap-2 text-xs font-mono text-berggruen-darkblue uppercase font-bold mb-2.5">
+                  <span>Aug 30, 2026</span> &bull; <span>Edgewater, New Jersey</span> &bull; <span class="px-2.5 py-0.5 rounded-full text-[10px] bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">Boya Sports Clinics</span>
                 </div>
 
-                <h3 class="text-xl sm:text-2xl font-extrabold text-berggruen-ink group-hover:text-berggruen-blue transition-colors tracking-tight leading-snug">
+                <h3 class="text-xl sm:text-2xl font-extrabold text-berggruen-ink group-hover:text-berggruen-darkblue transition-colors tracking-tight leading-snug">
                   2nd Boya Tennis Fundamentals &amp; Clinics
                 </h3>
 
@@ -607,7 +1091,7 @@
 
               <div class="pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3 text-xs">
                 <span class="text-berggruen-muted font-mono text-[11px]">70+ Community Attendees &bull; 501(c)(3) Subsidized Clinic</span>
-                <span class="font-semibold text-berggruen-blue text-xs">Athletic Literacy &amp; Wellness</span>
+                <span class="font-semibold text-berggruen-darkblue text-xs">Athletic Literacy &amp; Wellness</span>
               </div>
             </div>
 
@@ -619,50 +1103,58 @@
     </section>
 
     <!-- ========================================== -->
-    <!-- 4. NEWS (With Photos)                      -->
+    <!-- 4. NEWS & DISPATCH                         -->
     <!-- ========================================== -->
-    <section id="news" class="py-24 bg-[#FAF9F5] border-b border-berggruen-border">
+    <section id="news" class="py-24 bg-[#FAF9F6] border-b border-berggruen-border">
       <div class="max-w-6xl mx-auto px-6 lg:px-8">
         
         <div class="max-w-2xl mb-14">
-          <div class="text-xs font-mono font-bold uppercase tracking-widest text-berggruen-blue mb-2">04 / News</div>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-berggruen-ink tracking-tight">Announcements & Dispatch</h2>
-          <p class="text-sm text-berggruen-muted mt-2 font-light">
-            Official institutional updates, alliance milestones, and partnership announcements.
+          <div class="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-berggruen-darkblue mb-2.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-berggruen-blue"></span>
+            <span>04 / News</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-berggruen-ink tracking-tight">Announcements &amp; Dispatch</h2>
+          <p class="text-sm sm:text-base text-berggruen-muted mt-2 font-light">
+            Official institutional updates, community milestones, and corporate giving progress.
           </p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           
           <!-- News Article 1: BPAUS Year-End Badminton -->
-          <article class="bg-white rounded-2xl border border-berggruen-border overflow-hidden hover:border-berggruen-blue transition-all group shadow-xs flex flex-col justify-between">
+          <article class="bg-white rounded-3xl border border-berggruen-border overflow-hidden hover:border-berggruen-blue hover:shadow-lift transition-all group shadow-fine flex flex-col justify-between">
             <div>
-              <div class="h-60 overflow-hidden relative">
+              <div class="w-full aspect-[16/10] overflow-hidden relative">
                 <img src="assets/badminton-year-end-2026.jpg" alt="BPAUS Year-End Badminton" class="w-full h-full object-cover img-zoom">
-                <div class="absolute top-3 left-3 bg-[#FAF9F5]/90 backdrop-blur-xs px-2.5 py-1 rounded text-[11px] font-mono font-semibold text-berggruen-blue border border-berggruen-border">
+                <div class="absolute top-3 left-3 bg-[#FAF9F6]/90 backdrop-blur-xs px-2.5 py-1 rounded-md text-[11px] font-mono font-semibold text-berggruen-darkblue border border-berggruen-border">
                   Sports &amp; Community
                 </div>
               </div>
               <div class="p-7">
                 <div class="text-xs font-mono text-berggruen-muted mb-2">November 24, 2026</div>
-                <h3 class="text-xl font-bold text-berggruen-ink group-hover:text-berggruen-blue transition-colors leading-snug mb-3">
+                <h3 class="text-xl font-bold text-berggruen-ink group-hover:text-berggruen-darkblue transition-colors leading-snug mb-3">
                   BPAUS Year-End Badminton: Fundamentals &amp; Leadership (Dec. 5)
                 </h3>
-                <p class="text-sm text-berggruen-muted leading-relaxed font-light mb-4">
+                <p class="text-sm text-berggruen-muted leading-relaxed font-normal mb-4">
                   Wrap up 2026 on a high note with the BPAUS community! Come unwind on Saturday, Dec. 5 (3:00–6:00 PM) at NJBC Dream for three hours of relaxed doubles, friendly coaching, and year-end fun. Spots are filling fast—register now!
                 </p>
-                <div class="space-y-1.5 text-xs text-slate-600 bg-[#FAF9F5] p-3.5 rounded-xl border border-berggruen-border">
+                <div class="space-y-2 text-xs text-slate-600 bg-[#FAF9F6] p-4 rounded-2xl border border-berggruen-border">
                   <div class="flex items-center gap-2">
-                    <span class="font-bold text-berggruen-ink shrink-0">Time:</span>
+                    <span class="font-bold text-berggruen-ink shrink-0 font-mono text-[11px] uppercase">Time:</span>
                     <span>Dec. 5, 2026 &bull; 3:00 – 6:00 PM</span>
                   </div>
                   <div class="flex items-start gap-2">
-                    <span class="font-bold text-berggruen-ink shrink-0">Venue:</span>
+                    <span class="font-bold text-berggruen-ink shrink-0 font-mono text-[11px] uppercase">Venue:</span>
                     <span>NJBC Dream (5225 Meadowlands Pkwy, Secaucus, NJ)</span>
                   </div>
-                  <div class="flex items-center gap-2">
-                    <span class="font-bold text-berggruen-ink shrink-0">Contact:</span>
-                    <span>WeChat: <strong class="font-semibold text-berggruen-ink">RebeccaFuShuang</strong></span>
+                  <div class="flex items-center justify-between pt-1 border-t border-berggruen-border/60">
+                    <div class="flex items-center gap-1.5">
+                      <span class="font-bold text-berggruen-ink shrink-0 font-mono text-[11px] uppercase">WeChat:</span>
+                      <span class="font-mono font-semibold text-berggruen-ink">RebeccaFuShuang</span>
+                    </div>
+                    <button type="button" onclick="copyText('RebeccaFuShuang', 'WeChat ID')" class="text-[10px] font-mono font-semibold text-berggruen-darkblue hover:underline bg-white px-2 py-0.5 rounded border border-berggruen-border">
+                      Copy ID
+                    </button>
                   </div>
                 </div>
               </div>
@@ -670,34 +1162,41 @@
             <div class="px-7 pb-6 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
               <span class="text-emerald-700 font-medium font-mono flex items-center gap-1.5">
                 <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                Registration Open
+                Registration Active
               </span>
-              <a href="#contact" class="text-berggruen-blue font-bold hover:underline">Register Now &rarr;</a>
+              <a href="#contact" class="text-berggruen-darkblue font-bold hover:underline flex items-center gap-1">
+                <span>Inquire &amp; Register</span> &rarr;
+              </a>
             </div>
           </article>
 
-          <!-- News Article 2: Corporate Matching -->
-          <article class="bg-white rounded-2xl border border-berggruen-border overflow-hidden hover:border-berggruen-blue transition-all group shadow-xs flex flex-col justify-between">
+          <!-- News Article 2: Corporate Matching Verified -->
+          <article class="bg-white rounded-3xl border border-berggruen-border overflow-hidden hover:border-berggruen-blue hover:shadow-lift transition-all group shadow-fine flex flex-col justify-between">
             <div>
-              <div class="h-60 overflow-hidden relative">
-                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Corporate Matching" class="w-full h-full object-cover img-zoom">
-                <div class="absolute top-3 left-3 bg-[#FAF9F5]/90 backdrop-blur-xs px-2.5 py-1 rounded text-[11px] font-mono font-semibold text-berggruen-blue border border-berggruen-border">
+              <div class="w-full aspect-[16/10] overflow-hidden relative">
+                <img src="assets/corporate-giving-matching.jpg" alt="Corporate Gift Matching Partnership" class="w-full h-full object-cover img-zoom">
+                <div class="absolute top-3 left-3 bg-[#FAF9F6]/90 backdrop-blur-xs px-2.5 py-1 rounded-md text-[11px] font-mono font-semibold text-berggruen-darkblue border border-berggruen-border">
                   Corporate Giving
                 </div>
               </div>
               <div class="p-7">
-                <div class="text-xs font-mono text-berggruen-muted mb-2">October 24, 2026</div>
-                <h3 class="text-xl font-bold text-berggruen-ink group-hover:text-berggruen-blue transition-colors leading-snug mb-3">
-                  Corporate Matching Registration Initiated
+                <div class="text-xs font-mono text-berggruen-muted mb-2">November 2026</div>
+                <h3 class="text-xl font-bold text-berggruen-ink group-hover:text-berggruen-darkblue transition-colors leading-snug mb-3">
+                  Corporate Gift Matching Officially Verified on Benevity &amp; YourCause
                 </h3>
-                <p class="text-sm text-berggruen-muted leading-relaxed font-light">
-                  Registration has been initiated under our official legal entity name: <strong class="font-semibold text-berggruen-ink">Boya Professional Alliance, Inc.</strong> Verification is currently in progress to enable corporate employer gift matching, directly supporting the <em>Boya Roundtable Series</em>, <em>Boya Career Accelerator Workshops</em>, and subsidized <em>Boya Sports Clinics &amp; Fundamentals</em>.
+                <p class="text-sm text-berggruen-muted leading-relaxed font-normal">
+                  Boya Professional Alliance, Inc. is now officially verified on leading corporate giving platforms <strong class="font-semibold text-berggruen-ink">Benevity</strong> and <strong class="font-semibold text-berggruen-ink">YourCause</strong> (Blackbaud). Eligible employees can now double or triple their charitable contributions through 1:1 employer gift matching to directly support our educational symposiums, leadership workshops, and subsidized sports equity programs.
                 </p>
               </div>
             </div>
             <div class="px-7 pb-6 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-              <span class="text-berggruen-muted">Verification in Progress</span>
-              <a href="#donate" class="text-berggruen-blue font-bold hover:underline">Support Our Mission &rarr;</a>
+              <span class="text-emerald-700 font-medium font-mono flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                Benevity &bull; YourCause Verified
+              </span>
+              <a href="#donate" class="text-berggruen-darkblue font-bold hover:underline flex items-center gap-1">
+                <span>Double Your Gift</span> &rarr;
+              </a>
             </div>
           </article>
 
@@ -707,7 +1206,7 @@
     </section>
 
     <!-- ========================================== -->
-    <!-- 5. CONTACT US                              -->
+    <!-- 5. CONTACT US & COMMUNITY INQUIRIES        -->
     <!-- ========================================== -->
     <section id="contact" class="py-24 bg-white border-b border-berggruen-border">
       <div class="max-w-6xl mx-auto px-6 lg:px-8">
@@ -715,64 +1214,85 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-16">
           
           <div class="lg:col-span-5 space-y-6">
-            <div class="text-xs font-mono font-bold uppercase tracking-widest text-berggruen-blue">05 / Contact Us</div>
+            <div class="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-berggruen-darkblue">
+              <span class="w-1.5 h-1.5 rounded-full bg-berggruen-blue"></span>
+              <span>05 / Contact Us</span>
+            </div>
             <h2 class="text-3xl sm:text-4xl font-extrabold text-berggruen-ink tracking-tight">Connect with the Alliance</h2>
             <p class="text-base text-berggruen-muted font-light leading-relaxed">
               We welcome dialogue with corporate giving coordinators, prospective mentors, speakers, and institutional partners.
             </p>
 
-            <div class="pt-4 space-y-4 text-sm">
-              <div class="p-4 rounded-xl bg-[#FAF9F5] border border-berggruen-border">
-                <div class="text-xs font-mono text-berggruen-muted uppercase font-bold">Official Email</div>
-                <a href="mailto:BPAUS2026@gmail.com" class="font-bold text-berggruen-ink text-base hover:text-berggruen-blue transition-colors">BPAUS2026@gmail.com</a>
+            <div class="pt-2 space-y-3.5 text-sm">
+              
+              <!-- Email Card -->
+              <div class="p-4 rounded-2xl bg-[#FAF9F6] border border-berggruen-border shadow-fine">
+                <div class="text-[11px] font-mono text-berggruen-muted uppercase font-bold mb-0.5">Official Inquiries &bull; Email</div>
+                <a href="mailto:BPAUS2026@gmail.com" class="font-bold text-berggruen-ink text-base hover:text-berggruen-darkblue transition-colors flex items-center justify-between">
+                  <span>BPAUS2026@gmail.com</span>
+                  <span class="text-xs font-mono text-berggruen-darkblue font-normal">Send &rarr;</span>
+                </a>
               </div>
               
-              <div class="p-4 rounded-xl bg-[#FAF9F5] border border-berggruen-border">
-                <div class="text-xs font-mono text-berggruen-muted uppercase font-bold">Incorporation Domicile</div>
+              <!-- Domicile Card -->
+              <div class="p-4 rounded-2xl bg-[#FAF9F6] border border-berggruen-border shadow-fine">
+                <div class="text-[11px] font-mono text-berggruen-muted uppercase font-bold mb-0.5">Incorporation Domicile</div>
                 <div class="font-semibold text-berggruen-ink">State of New York, United States</div>
               </div>
 
-              <div class="p-4 rounded-xl bg-[#FAF9F5] border border-berggruen-border">
-                <div class="text-xs font-mono text-berggruen-muted uppercase font-bold">Official Web Portal</div>
-                <a href="https://bpausinc.github.io/" target="_blank" class="font-bold text-berggruen-ink text-base hover:text-berggruen-blue transition-colors">bpausinc.github.io</a>
+              <!-- Community Lead -->
+              <div class="p-4 rounded-2xl bg-[#FAF9F6] border border-berggruen-border shadow-fine">
+                <div class="flex items-center justify-between text-[11px] font-mono text-berggruen-muted uppercase font-bold mb-0.5">
+                  <span>Community Lead</span>
+                  <span class="text-emerald-800 bg-berggruen-softmint px-2 py-0.5 rounded text-[10px] font-mono font-bold border border-berggruen-border">CEO</span>
+                </div>
+                <div class="font-bold text-berggruen-ink text-base">Ms. Chengcheng Qin</div>
+                <div class="text-xs text-berggruen-muted font-normal mt-0.5 flex items-center justify-between">
+                  <span>Chief Executive Officer</span>
+                  <a href="mailto:BPAUS2026@gmail.com?subject=Inquiry%20to%20CEO%20Ms.%20Chengcheng%20Qin" class="text-berggruen-darkblue font-semibold hover:underline text-[11px] font-mono">Inquire &rarr;</a>
+                </div>
               </div>
+
             </div>
           </div>
 
-          <!-- Minimalist Berggruen Form -->
-          <div class="lg:col-span-7 bg-[#FAF9F5] p-8 sm:p-10 rounded-2xl border border-berggruen-border">
-            <h3 class="text-lg font-bold text-berggruen-ink mb-1">Send a Message</h3>
+          <!-- Minimalist Contact Form -->
+          <div class="lg:col-span-7 bg-[#FAF9F6] p-8 sm:p-10 rounded-3xl border border-berggruen-border shadow-fine">
+            <h3 class="text-lg font-bold text-berggruen-ink mb-1">Direct Message Dispatch</h3>
             <p class="text-xs text-berggruen-muted mb-6">Our board monitors inquiries daily and will reply promptly.</p>
 
             <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label class="block text-xs font-bold uppercase tracking-wider text-berggruen-muted mb-1.5">Your Name *</label>
-                  <input type="text" required placeholder="Full Name" class="w-full px-4 py-3 rounded-xl border border-berggruen-border bg-white text-sm focus:outline-none focus:border-berggruen-blue">
+                  <label class="block text-xs font-bold uppercase tracking-wider text-berggruen-muted mb-1.5 font-mono">Your Name *</label>
+                  <input type="text" required placeholder="Full Name" class="w-full px-4 py-3 rounded-2xl border border-berggruen-border bg-white text-sm focus:outline-none focus:border-berggruen-blue focus:ring-2 focus:ring-berggruen-blue/20 transition-all">
                 </div>
                 <div>
-                  <label class="block text-xs font-bold uppercase tracking-wider text-berggruen-muted mb-1.5">Email Address *</label>
-                  <input type="email" required placeholder="name@company.com" class="w-full px-4 py-3 rounded-xl border border-berggruen-border bg-white text-sm focus:outline-none focus:border-berggruen-blue">
+                  <label class="block text-xs font-bold uppercase tracking-wider text-berggruen-muted mb-1.5 font-mono">Email Address *</label>
+                  <input type="email" required placeholder="name@company.com" class="w-full px-4 py-3 rounded-2xl border border-berggruen-border bg-white text-sm focus:outline-none focus:border-berggruen-blue focus:ring-2 focus:ring-berggruen-blue/20 transition-all">
                 </div>
               </div>
 
               <div>
-                <label class="block text-xs font-bold uppercase tracking-wider text-berggruen-muted mb-1.5">Subject</label>
-                <input type="text" id="contactSubject" placeholder="Boya Roundtable / Accelerator / Clinics / General" class="w-full px-4 py-3 rounded-xl border border-berggruen-border bg-white text-sm focus:outline-none focus:border-berggruen-blue">
+                <label class="block text-xs font-bold uppercase tracking-wider text-berggruen-muted mb-1.5 font-mono">Subject / Topic</label>
+                <input type="text" id="contactSubject" placeholder="Boya Roundtable / Accelerator / Clinics / Corporate Giving" class="w-full px-4 py-3 rounded-2xl border border-berggruen-border bg-white text-sm focus:outline-none focus:border-berggruen-blue focus:ring-2 focus:ring-berggruen-blue/20 transition-all">
               </div>
 
               <div>
-                <label class="block text-xs font-bold uppercase tracking-wider text-berggruen-muted mb-1.5">Message *</label>
-                <textarea rows="4" required placeholder="How can the Alliance collaborate with you?" class="w-full px-4 py-3 rounded-xl border border-berggruen-border bg-white text-sm focus:outline-none focus:border-berggruen-blue"></textarea>
+                <label class="block text-xs font-bold uppercase tracking-wider text-berggruen-muted mb-1.5 font-mono">Message *</label>
+                <textarea rows="4" required placeholder="How can Boya Professional Alliance collaborate with you or your organization?" class="w-full px-4 py-3 rounded-2xl border border-berggruen-border bg-white text-sm focus:outline-none focus:border-berggruen-blue focus:ring-2 focus:ring-berggruen-blue/20 transition-all"></textarea>
               </div>
 
-              <button type="submit" class="px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider bg-berggruen-blue hover:bg-berggruen-darkblue text-[#152E28] hover:text-white transition-colors shadow-xs">
-                Send Message &rarr;
-              </button>
+              <div class="pt-2">
+                <button type="submit" class="px-8 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider bg-berggruen-blue hover:bg-berggruen-darkblue text-[#112420] hover:text-white transition-all shadow-fine hover:shadow-lift flex items-center gap-2">
+                  <span>Send Message</span>
+                  <span>&rarr;</span>
+                </button>
+              </div>
             </form>
 
-            <div id="formSuccess" class="hidden mt-4 text-xs font-semibold text-emerald-700 bg-emerald-50 p-3 rounded-lg border border-emerald-200">
-              Thank you. Your message has been received by our board.
+            <div id="formSuccess" class="hidden mt-4 text-xs font-semibold text-emerald-800 bg-emerald-50 p-3.5 rounded-2xl border border-emerald-200">
+              Thank you. Your message has been received by the Boya executive board.
             </div>
           </div>
 
@@ -781,77 +1301,217 @@
       </div>
     </section>
 
-    <!-- DONATE SECTION (Berggruen Deep Blue & White) -->
+    <!-- ========================================== -->
+    <!-- DONATE & CORPORATE MATCHING SECTION        -->
+    <!-- ========================================== -->
     <section id="donate" class="py-20 bg-berggruen-navy text-white relative overflow-hidden">
-      <div class="max-w-6xl mx-auto px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
-        <div class="space-y-2 max-w-2xl">
-          <div class="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-berggruen-lightmint">
-            <span class="w-2 h-2 rounded-full bg-berggruen-lightmint"></span> Support Our Mission
+      
+      <!-- Subtle architectural ambient radial in background -->
+      <div class="absolute inset-0 opacity-20 pointer-events-none" style="background-image: radial-gradient(#4FA393 1px, transparent 1px); background-size: 24px 24px;"></div>
+      
+      <div class="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
+        
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-10 pb-12 border-b border-white/10">
+          <div class="space-y-3 max-w-2xl">
+            <div class="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-widest text-berggruen-lightmint">
+              <span class="w-2 h-2 rounded-full bg-berggruen-lightmint"></span>
+              <span>Support Our Mission</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Donate &amp; Support Our Mission</h2>
+            <p class="text-sm sm:text-base text-slate-300 font-light leading-relaxed">
+              Contributions to Boya Professional Alliance, Inc. are tax-deductible under IRC Section 170. We accept <strong class="text-white font-medium">Zelle, Zeffy, Credit Card, and Check</strong> donations, as well as corporate employer matching gifts via <strong class="text-white font-medium">Benevity &amp; YourCause</strong> under our registered entity name:
+            </p>
+            <div class="pt-2 flex flex-wrap items-center gap-2.5">
+              <div class="inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm px-4 py-2.5 rounded-xl border border-white/15">
+                <span class="font-mono text-sm sm:text-base text-white font-semibold">
+                  Boya Professional Alliance, Inc.
+                </span>
+                <span class="text-[10px] font-mono uppercase bg-berggruen-blue/30 text-berggruen-lightmint px-2 py-0.5 rounded border border-berggruen-lightmint/30">NY 501(c)(3)</span>
+              </div>
+              <div class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-mono">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>Benevity &amp; YourCause Verified</span>
+              </div>
+            </div>
           </div>
-          <h2 class="text-3xl font-extrabold tracking-tight">Donate & Support Our Mission</h2>
-          <p class="text-sm text-slate-300 font-light leading-relaxed">
-            Contributions to Boya Professional Alliance, Inc. are tax-deductible under IRC Section 170. Corporate gift matching registration is currently in progress under our registered entity name:
-          </p>
-          <div class="pt-2">
-            <span class="font-mono text-sm bg-white/10 px-3 py-1.5 rounded-md text-white font-semibold border border-white/10">
-              Boya Professional Alliance, Inc.
-            </span>
+
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 shrink-0">
+            <button id="copyLegalBtn" onclick="copyLegalName()" class="px-7 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white text-berggruen-navy hover:bg-slate-100 transition-all shadow-fine flex items-center justify-center gap-2">
+              <svg class="w-4 h-4 text-berggruen-darkblue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
+              </svg>
+              <span id="copyLegalBtnText">Copy Legal Name</span>
+            </button>
+            <a href="mailto:BPAUS2026@gmail.com?subject=Donation%20Inquiry%20(Zelle%2C%20Zeffy%2C%20Credit%20Card%2C%20Check%2C%20Matching)" class="px-7 py-3.5 rounded-full text-xs font-bold uppercase tracking-wider bg-berggruen-blue text-[#112420] hover:bg-berggruen-lightmint transition-colors shadow-fine flex items-center justify-center gap-2">
+              <span>Inquire via Email</span>
+              <span>&rarr;</span>
+            </a>
           </div>
         </div>
 
-        <div class="flex flex-col sm:flex-row items-center gap-4 shrink-0">
-          <button onclick="copyLegalName()" class="px-7 py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-white text-berggruen-navy hover:bg-slate-100 transition-colors shadow-xs">
-            Copy Legal Name
-          </button>
-          <a href="mailto:BPAUS2026@gmail.com?subject=Donation%20and%20Corporate%20Match%20Inquiry" class="px-7 py-3 rounded-full text-xs font-bold uppercase tracking-wider bg-berggruen-blue text-[#152E28] hover:bg-berggruen-darkblue hover:text-white transition-colors shadow-xs">
-            Inquire via Email
-          </a>
+        <!-- Ways to Give / Accepted Donation Channels -->
+        <div class="pt-10 pb-8 border-b border-white/10">
+          <div class="text-xs font-mono font-bold uppercase tracking-wider text-berggruen-lightmint mb-5">
+            Accepted Donation Channels &bull; Direct Giving &amp; Corporate Match
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <!-- Channel 1: Direct Donations (Zelle, Zeffy, Credit Card, Check) -->
+            <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 flex flex-col justify-between space-y-4">
+              <div>
+                <div class="flex flex-wrap items-center gap-2 mb-3">
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-white/10 text-berggruen-lightmint border border-white/10">Direct Philanthropic Giving</span>
+                  <span class="text-xs font-mono text-slate-300">501(c)(3) Tax-Deductible</span>
+                </div>
+                
+                <h3 class="text-lg font-bold text-white mb-2">Zelle, Zeffy, Credit Card &amp; Check</h3>
+                <p class="text-xs text-slate-300 font-light leading-relaxed mb-4">
+                  We accept tax-deductible direct donations via <strong class="text-white font-medium">Zelle</strong>, <strong class="text-white font-medium">Zeffy</strong> (zero-fee nonprofit portal), major <strong class="text-white font-medium">Credit Cards</strong>, and formal <strong class="text-white font-medium">Checks</strong>. Please inquire via email for official account routing, campaign links, and receipt delivery.
+                </p>
+
+                <div class="flex flex-wrap gap-2 text-xs font-mono">
+                  <span class="px-2.5 py-1 rounded-lg bg-white/10 text-white border border-white/10">✦ Zelle</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-white/10 text-white border border-white/10">✦ Zeffy Portal</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-white/10 text-white border border-white/10">✦ Credit Card</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-white/10 text-white border border-white/10">✦ Check</span>
+                </div>
+              </div>
+
+              <div class="pt-3 border-t border-white/10 flex items-center justify-between text-xs">
+                <span class="text-slate-400 font-mono text-[11px]">Inquire for routing details &amp; tax receipts</span>
+                <a href="mailto:BPAUS2026@gmail.com?subject=Direct%20Donation%20Inquiry%20(Zelle%2C%20Zeffy%2C%20Credit%20Card%2C%20Check)" class="font-bold text-berggruen-lightmint hover:underline flex items-center gap-1 font-mono">
+                  <span>Inquire to Donate</span> &rarr;
+                </a>
+              </div>
+            </div>
+
+            <!-- Channel 2: Corporate Employer Matching (Benevity & YourCause) -->
+            <div class="bg-white/5 backdrop-blur-sm p-6 rounded-2xl border border-white/10 flex flex-col justify-between space-y-4">
+              <div>
+                <div class="flex flex-wrap items-center gap-2 mb-3">
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 flex items-center gap-1">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                    Verified Platform
+                  </span>
+                  <span class="text-xs font-mono text-slate-300">Employer 1:1 Matching</span>
+                </div>
+
+                <h3 class="text-lg font-bold text-white mb-2">Benevity &amp; YourCause Corporate Matching</h3>
+                <p class="text-xs text-slate-300 font-light leading-relaxed mb-4">
+                  Boya Professional Alliance, Inc. is verified on <strong class="text-white font-medium">Benevity</strong> and <strong class="text-white font-medium">YourCause</strong>. Employees at eligible corporate employers can double or triple their impact under our legal entity name.
+                </p>
+
+                <div class="flex flex-wrap gap-2 text-xs font-mono">
+                  <span class="px-2.5 py-1 rounded-lg bg-emerald-500/15 text-emerald-200 border border-emerald-400/20">✦ Benevity Verified</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-emerald-500/15 text-emerald-200 border border-emerald-400/20">✦ YourCause (Blackbaud)</span>
+                  <span class="px-2.5 py-1 rounded-lg bg-white/10 text-white border border-white/10">✦ Corporate Receipt</span>
+                </div>
+              </div>
+
+              <div class="pt-3 border-t border-white/10 flex items-center justify-between text-xs">
+                <span class="text-slate-400 font-mono text-[11px]">Search: Boya Professional Alliance, Inc.</span>
+                <button type="button" onclick="copyLegalName()" class="font-bold text-berggruen-lightmint hover:underline flex items-center gap-1 font-mono">
+                  <span>Copy Legal Name</span> &rarr;
+                </button>
+              </div>
+            </div>
+
+          </div>
         </div>
+
+        <!-- 3-Step Corporate Matching Guide -->
+        <div class="pt-10">
+          <div class="text-xs font-mono font-bold uppercase tracking-wider text-berggruen-lightmint mb-6">Corporate Gift Matching &bull; 3-Step Guide</div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <div class="bg-white/5 backdrop-blur-sm p-5 rounded-2xl border border-white/10">
+              <div class="text-[11px] font-mono text-berggruen-lightmint font-bold uppercase mb-1">Step 01</div>
+              <div class="text-base font-bold text-white mb-1.5">Open Benevity or YourCause</div>
+              <p class="text-xs text-slate-300 font-light leading-relaxed">
+                Log into your company’s giving portal (Benevity, YourCause, CyberGrants, etc.) and search for <strong class="text-white font-medium">Boya Professional Alliance, Inc.</strong>
+              </p>
+            </div>
+
+            <div class="bg-white/5 backdrop-blur-sm p-5 rounded-2xl border border-white/10">
+              <div class="text-[11px] font-mono text-berggruen-lightmint font-bold uppercase mb-1">Step 02</div>
+              <div class="text-base font-bold text-white mb-1.5">Submit 1:1 Matching Gift</div>
+              <p class="text-xs text-slate-300 font-light leading-relaxed">
+                Designate our verified entity to double or triple your support for professional leadership labs and subsidized sports equity.
+              </p>
+            </div>
+
+            <div class="bg-white/5 backdrop-blur-sm p-5 rounded-2xl border border-white/10">
+              <div class="text-[11px] font-mono text-berggruen-lightmint font-bold uppercase mb-1">Step 03</div>
+              <div class="text-base font-bold text-white mb-1.5">Receive Tax Receipt</div>
+              <p class="text-xs text-slate-300 font-light leading-relaxed">
+                Email BPAUS to receive formal institutional acknowledgement and an official 501(c)(3) tax receipt.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
       </div>
     </section>
 
   </main>
 
-  <!-- MINIMALIST FOOTER -->
+  <!-- ========================================== -->
+  <!-- MINIMALIST ARCHITECTURAL FOOTER            -->
+  <!-- ========================================== -->
   <footer class="bg-white border-t border-berggruen-border py-12 text-xs text-berggruen-muted">
-    <div class="max-w-6xl mx-auto px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+    <div class="max-w-6xl mx-auto px-6 lg:px-8 space-y-8">
       
-      <div class="flex items-center gap-3">
-        <img src="assets/logo.jpg" alt="Logo" class="w-8 h-8 object-contain rounded border border-berggruen-border">
-        <div>
-          <span class="font-bold text-berggruen-ink">Boya Professional Alliance, Inc.</span>
-          <span class="text-slate-400 mx-1">&bull;</span>
-          <span>博雅新青年 &bull; BPAUS</span>
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 pb-6 border-b border-berggruen-border">
+        <div class="flex items-center gap-3.5">
+          <img src="assets/logo.jpg" alt="Logo" class="w-9 h-9 object-contain rounded-lg border border-berggruen-border">
+          <div>
+            <div class="font-bold text-berggruen-ink text-sm">Boya Professional Alliance, Inc.</div>
+            <div class="text-[11px] text-berggruen-muted font-medium">博雅新青年 &bull; BPAUS &bull; New York 501(c)(3) Public Charity</div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center gap-6 font-semibold text-slate-700 text-xs">
+          <a href="#about" class="hover:text-berggruen-darkblue transition-colors">About</a>
+          <a href="#programs" class="hover:text-berggruen-darkblue transition-colors">Programs</a>
+          <a href="#events" class="hover:text-berggruen-darkblue transition-colors">Events</a>
+          <a href="#news" class="hover:text-berggruen-darkblue transition-colors">News</a>
+          <a href="#contact" class="hover:text-berggruen-darkblue transition-colors">Contact</a>
+          <a href="#donate" class="text-berggruen-darkblue font-bold hover:underline">Donate</a>
         </div>
       </div>
 
-      <div class="flex items-center space-x-6">
-        <a href="#about" class="hover:text-berggruen-blue transition-colors">About</a>
-        <a href="#programs" class="hover:text-berggruen-blue transition-colors">Programs</a>
-        <a href="#events" class="hover:text-berggruen-blue transition-colors">Events</a>
-        <a href="#news" class="hover:text-berggruen-blue transition-colors">News</a>
-        <a href="#contact" class="hover:text-berggruen-blue transition-colors">Contact</a>
-        <a href="#donate" class="font-bold text-berggruen-blue hover:underline">Donate</a>
-      </div>
-
-      <div class="text-right">
-        &copy; <span id="year">2026</span> Boya Professional Alliance, Inc. All rights reserved.
+      <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-berggruen-muted font-mono">
+        <div>
+          &copy; <span id="year">2026</span> Boya Professional Alliance, Inc. All rights reserved.
+        </div>
+        <div class="flex items-center gap-4">
+          <span>State of New York, USA</span>
+          <span>&bull;</span>
+          <span>501(c)(3) Institutional Exemption</span>
+        </div>
       </div>
 
     </div>
   </footer>
 
   <!-- Toast Notification -->
-  <div id="toast" class="fixed bottom-6 right-6 z-50 bg-berggruen-ink text-white px-5 py-3 rounded-xl text-xs font-medium shadow-2xl opacity-0 translate-y-10 transition-all pointer-events-none border border-slate-700">
-    Legal name copied to clipboard.
+  <div id="toast" class="fixed bottom-6 right-6 z-50 bg-berggruen-ink text-white px-5 py-3 rounded-2xl text-xs font-mono font-medium shadow-lift opacity-0 translate-y-10 transition-all pointer-events-none border border-slate-700 flex items-center gap-2">
+    <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+    </svg>
+    <span id="toastText">Legal name copied to clipboard.</span>
   </div>
 
+  <!-- ========================================== -->
   <!-- PROGRAM DETAILS MODAL (Populated on Click) -->
-  <div id="programModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 bg-berggruen-navy/75 backdrop-blur-sm transition-opacity duration-300" onclick="handleModalBackdropClick(event)">
+  <!-- ========================================== -->
+  <div id="programModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 bg-berggruen-navy/80 backdrop-blur-sm transition-opacity duration-300" onclick="handleModalBackdropClick(event)">
     <div class="max-w-2xl w-full max-h-[90vh] overflow-y-auto bg-white rounded-3xl border border-berggruen-border shadow-2xl p-6 sm:p-10 relative my-auto">
       
       <!-- Close Button -->
-      <button type="button" onclick="closeProgramModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-[#FAF9F5] border border-berggruen-border flex items-center justify-center text-slate-500 hover:text-berggruen-ink hover:bg-slate-100 transition-colors" aria-label="Close modal">
+      <button type="button" onclick="closeProgramModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-[#FAF9F6] border border-berggruen-border flex items-center justify-center text-slate-500 hover:text-berggruen-ink hover:bg-slate-100 transition-colors" aria-label="Close modal">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
         </svg>
@@ -862,12 +1522,12 @@
 
       <!-- Title & Tagline -->
       <h3 id="modalTitle" class="text-2xl sm:text-3xl font-extrabold text-berggruen-ink tracking-tight mb-1"></h3>
-      <p id="modalTagline" class="text-xs sm:text-sm font-semibold text-berggruen-blue mb-5"></p>
+      <p id="modalTagline" class="text-xs sm:text-sm font-semibold text-berggruen-darkblue mb-5"></p>
 
-      <!-- Banner Image -->
-      <div class="h-56 sm:h-64 rounded-xl overflow-hidden relative border border-slate-100 mb-6">
+      <!-- Banner Image (Standard 16:10 Ratio) -->
+      <div class="w-full aspect-[16/10] rounded-2xl overflow-hidden relative border border-slate-100 mb-6 shadow-fine">
         <img id="modalImage" src="" alt="" class="w-full h-full object-cover">
-        <div id="modalCaption" class="absolute bottom-2.5 left-2.5 bg-[#FAF9F5]/90 backdrop-blur-xs px-2.5 py-1 rounded text-[11px] font-mono font-semibold text-berggruen-ink border border-berggruen-border"></div>
+        <div id="modalCaption" class="absolute bottom-2.5 left-2.5 bg-[#FAF9F6]/90 backdrop-blur-xs px-2.5 py-1 rounded-md text-[11px] font-mono font-semibold text-berggruen-ink border border-berggruen-border"></div>
       </div>
 
       <!-- Official Introduction Paragraphs -->
@@ -875,13 +1535,13 @@
 
       <!-- Key Pillars List -->
       <div class="pt-6 border-t border-slate-100 mb-8">
-        <div class="text-[11px] font-mono font-bold uppercase tracking-wider text-berggruen-muted mb-4">Key Pillars &amp; Charter</div>
+        <div class="text-[11px] font-mono font-bold uppercase tracking-wider text-berggruen-darkblue mb-4">Key Pillars &amp; Charter</div>
         <ul id="modalPillars" class="space-y-4 text-xs sm:text-sm text-slate-600 leading-relaxed font-light"></ul>
       </div>
 
       <!-- Modal Action CTA -->
       <div class="pt-2 flex flex-col sm:flex-row gap-3">
-        <a id="modalCTA" href="#contact" class="flex-1 py-3.5 rounded-full text-xs font-bold text-center tracking-wider uppercase bg-berggruen-blue text-[#152E28] hover:bg-berggruen-darkblue hover:text-white transition-colors shadow-xs"></a>
+        <a id="modalCTA" href="#contact" class="flex-1 py-3.5 rounded-full text-xs font-bold text-center tracking-wider uppercase bg-berggruen-blue text-[#112420] hover:bg-berggruen-darkblue hover:text-white transition-colors shadow-fine"></a>
         <button type="button" onclick="closeProgramModal()" class="px-6 py-3.5 rounded-full text-xs font-semibold text-slate-700 border border-berggruen-border hover:bg-slate-50 transition-colors">
           Close Overview
         </button>
@@ -891,8 +1551,10 @@
   </div>
 
   <script>
+    // Copyright Year
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    // Mobile Menu Toggle
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mobileMenu = document.getElementById('mobileMenu');
     function toggleMobileMenu() {
@@ -900,27 +1562,48 @@
     }
     if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', toggleMobileMenu);
 
+    // Copy Legal Name
     function copyLegalName() {
       const name = "Boya Professional Alliance, Inc.";
       if (navigator.clipboard) {
-        navigator.clipboard.writeText(name).then(showToast);
+        navigator.clipboard.writeText(name).then(() => {
+          showToast("Legal name copied to clipboard.");
+          const btnText = document.getElementById('copyLegalBtnText');
+          if (btnText) {
+            const original = btnText.textContent;
+            btnText.textContent = "✓ Copied to Clipboard!";
+            setTimeout(() => { btnText.textContent = original; }, 2400);
+          }
+        });
       }
     }
 
-    function showToast() {
+    // Generic Copy Helper
+    function copyText(text, label) {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(() => {
+          showToast(`${label} copied to clipboard!`);
+        });
+      }
+    }
+
+    // Toast Notification
+    function showToast(message) {
       const toast = document.getElementById('toast');
+      const toastText = document.getElementById('toastText');
+      if (toastText) toastText.textContent = message;
       toast.classList.remove('opacity-0', 'translate-y-10');
       setTimeout(() => {
         toast.classList.add('opacity-0', 'translate-y-10');
-      }, 2200);
+      }, 2500);
     }
 
-    /* Program Modal Data (Exact Copy Preserved for Click-to-View) */
+    // Program Modal Data (Preserving Complete Content & Charter)
     const programData = {
       roundtable: {
         title: "Boya Roundtable Series",
         tagline: "Closed-Door Strategic Inquiry & Industry Frontiers",
-        tags: ["Executive Forum", "Chatham House Rule", "By Invitation"],
+        tags: ["Executive Forum", "Curated Dialogue", "By Invitation"],
         image: "assets/roundtable-session-1.jpg",
         imageCaption: "Curated 20–30 Seats Assembly",
         intro: [
@@ -941,8 +1624,8 @@
             desc: "Participation is strictly vetted to ensure every attendee brings commensurate expertise, meaningful context, and mutual respect to the table."
           },
           {
-            title: "The Chatham House Standard",
-            desc: "High-stakes topics (including quantitative finance and proprietary tech) adhere strictly to the Chatham House Rule to protect privacy and promote absolute candor. Selected frameworks from non-sensitive sessions are published to elevate the wider community."
+            title: "Candor & Discretion Standard",
+            desc: "Discussions emphasize intellectual honesty, psychological safety, and mutual discretion. When exploring sensitive market frontiers or proprietary tech, sessions operate with utmost discretion to promote absolute candor, while universal frameworks are published to elevate the wider community."
           }
         ],
         ctaText: "Apply for Invitation →",
@@ -1021,7 +1704,7 @@
       // Tags
       const tagsContainer = document.getElementById('modalTags');
       tagsContainer.innerHTML = data.tags.map(tag => 
-        `<span class="px-2.5 py-0.5 rounded text-[11px] font-mono font-medium bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">${tag}</span>`
+        `<span class="px-2.5 py-0.5 rounded-full text-[11px] font-mono font-medium bg-berggruen-softmint text-berggruen-darkblue border border-berggruen-border">${tag}</span>`
       ).join('');
 
       // Introduction
@@ -1079,12 +1762,55 @@
       }
     }
 
+    // Event Category Filtering
+    function filterEvents(category) {
+      const cards = document.querySelectorAll('.event-card');
+      const buttons = document.querySelectorAll('.event-filter-btn');
+
+      // Update button styling
+      buttons.forEach(btn => {
+        if (btn.getAttribute('data-filter') === category) {
+          btn.className = "event-filter-btn px-3.5 py-1.5 rounded-full border border-berggruen-darkblue bg-berggruen-darkblue text-white transition-all font-semibold shadow-fine";
+        } else {
+          btn.className = "event-filter-btn px-3.5 py-1.5 rounded-full border border-berggruen-border bg-[#FAF9F6] text-slate-700 hover:border-berggruen-blue transition-all";
+        }
+      });
+
+      // Filter cards
+      cards.forEach(card => {
+        const itemCategory = card.getAttribute('data-category');
+        if (category === 'all' || itemCategory === category) {
+          card.classList.remove('hidden-card');
+        } else {
+          card.classList.add('hidden-card');
+        }
+      });
+    }
+
+    // Thanksgiving Letter Toggle
+    function toggleLetterExpansion() {
+      const box = document.getElementById('letterScrollBox');
+      const btnText = document.getElementById('expandBtnText');
+      const btnIcon = document.getElementById('expandBtnIcon');
+      if (box.classList.contains('max-h-[480px]')) {
+        box.classList.remove('max-h-[480px]');
+        btnText.textContent = 'Collapse to Scroll Box';
+        if (btnIcon) btnIcon.classList.add('rotate-180');
+      } else {
+        box.classList.add('max-h-[480px]');
+        btnText.textContent = 'Expand Full Letter';
+        if (btnIcon) btnIcon.classList.remove('rotate-180');
+        document.getElementById('thanksgiving-letter').scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    // Contact Form Handler
     function handleFormSubmit(e) {
       e.preventDefault();
       document.getElementById('contactForm').reset();
       const msg = document.getElementById('formSuccess');
       msg.classList.remove('hidden');
-      setTimeout(() => msg.classList.add('hidden'), 4000);
+      setTimeout(() => msg.classList.add('hidden'), 5000);
     }
   </script>
 
